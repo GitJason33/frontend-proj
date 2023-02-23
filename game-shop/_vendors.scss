@@ -1,4 +1,4 @@
-@mixin transfom($v){
+@mixin transform($v){
    transform: $v;
    -o-transform: $v;
    -webkit-transform: $v;
@@ -14,4 +14,10 @@
    -webkit-transition: $v;
    -o-transition: $v;
    -moz-transition: $v;
+}
+@mixin animation($n, $d, $it: infinite, $t: linear){
+   animation: $n $d $it $t;
+   -webkit-animation: $n $d $it $t;
+   -o-animation: $n $d $it $t;
+   -moz-animation: $n $d $it $t;
 }

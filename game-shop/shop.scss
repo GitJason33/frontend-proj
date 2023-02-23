@@ -35,7 +35,7 @@ body, html{
    height: 24px;
    stroke-width: 2px;
  
-   @include transfom(translateY(2px));
+   @include transform(translateY(2px));
 }
 section[id]{
    svg{ @extend .svg; }
@@ -55,15 +55,14 @@ header{
       width: 75px;
       height: auto;
    }
-
-   #account{
+}
+#account, #buttons{
       @extend .flex;
       align-items: center;
       justify-content: space-around;
       width: 50%;
 
-      button{
-         // all: unset;
+      .acct{
          @extend .cp1;
          @include transition(400ms);
          display: block;
@@ -77,13 +76,12 @@ header{
          border-radius: 0.5rem;
          flex-grow: 1;
       }
-      button:hover{
+      .acct:hover{
          @extend .cp2;
          border-color: $c1;
          cursor: pointer;
       }
    }
-}
 @media screen and (max-width: 210px){
    header{
       flex-direction: column;
@@ -126,7 +124,7 @@ nav{
    }
    #home aside{
       display: none;
-      @include transfom(translateY(4px));
+      @include transform(translateY(4px));
       font: {
          family: Courier;
          size: 24px;
@@ -182,7 +180,7 @@ nav{
    }
    #search svg{
       position: absolute;
-      @include transfom(translateX(7px));
+      @include transform(translateX(7px));
    }
 }
 @media screen and (max-width: 231px){

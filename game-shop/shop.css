@@ -7,17 +7,17 @@ body, html {
   background-color: rgb(48, 47, 47);
 }
 
-.cp1, header #account button {
+.cp1, #account .acct, #buttons .acct {
   background-color: rgb(48, 47, 47);
   color: magenta;
 }
 
-.cp2, header #account button:hover {
+.cp2, #account .acct:hover, #buttons .acct:hover {
   background-color: magenta;
   color: rgb(48, 47, 47);
 }
 
-.flex, #bg-image section, nav section, nav #home, nav div article, nav div, nav, header #account, header {
+.flex, #bg-image section, nav section, nav #home, nav div article, nav div, nav, #account, #buttons, header {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -47,12 +47,13 @@ header #logo img {
   width: 75px;
   height: auto;
 }
-header #account {
+
+#account, #buttons {
   align-items: center;
   justify-content: space-around;
   width: 50%;
 }
-header #account button {
+#account .acct, #buttons .acct {
   transition: 400ms;
   -webkit-transition: 400ms;
   -o-transition: 400ms;
@@ -66,7 +67,7 @@ header #account button {
   border-radius: 0.5rem;
   flex-grow: 1;
 }
-header #account button:hover {
+#account .acct:hover, #buttons .acct:hover {
   border-color: rgb(48, 47, 47);
   cursor: pointer;
 }

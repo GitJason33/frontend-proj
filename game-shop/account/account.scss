@@ -1,0 +1,197 @@
+@import "../vars";
+@import "../vendors";
+
+// animation box
+#anime{
+  width: 50%;
+  height: 500px;
+  margin: 30px auto;
+  border-radius: 1rem;
+
+  // align center
+  padding: 2px;
+
+  background-color: $c1;
+  position: relative;
+
+  // hide out rotation
+  overflow: hidden;
+
+  #infos{
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: $c4;
+    border-radius: 1rem;
+    color: gray;
+    padding: 10px;
+
+    h1{
+      margin: 0;
+      padding: 10px 10px 40px;
+      color: $c1;
+      text-align: center;
+      font-family: Audiowide, cursive;
+      
+      // div input:focus + label + i{
+
+      // }
+      // div input:focus + label{
+
+      // }
+    }
+    .form1{
+      text-align: center;
+      section{
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      input{
+        all: unset;
+        color: $c4;
+        background-color: transparent;
+        width: $inputWid;
+        padding: 10px;
+        text-align: left;
+        position: relative;
+        z-index: 2;
+        @include transition(500ms);
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      label{
+        z-index: 1;
+        position: absolute;
+        padding: 10px;
+        left: 15%;
+        font-family: Audiowide, cursive;
+        @include transition(500ms);
+      }
+      // megenta background
+      .h8t{
+        background: $c3;
+        height: 1px;
+        width: $inputWid;
+        border-radius: 0.75rem;
+        position: absolute;
+        @include transition(500ms);
+
+        // align center
+        @include transform(translateX(20%));
+      }
+      
+      // transitions
+      input:focus ~ label, input:valid ~ label{
+        @include transform(translate(-15px, -28px));
+        font-size: 13px;
+      }
+      input:focus ~ label ~ .h8t, input:valid ~ label ~ .h8t{
+        height: 38px;
+        @include transform(translate(20%,-38px));
+      }
+
+      // responsive positioning ---------------
+      @media only screen and (max-width: 450px){
+        input{
+          width: 99%; 
+          padding: 10px 0;
+        }
+        label{ left: 0; }
+        .h8t{ 
+          width: 100%;
+          @include transform(translateX(0));
+        }
+        input:focus ~ label ~ .h8t, input:valid ~ label ~ .h8t{
+          @include transform(translateY(-38px));
+        }
+        input:focus ~ label, input:valid ~ label{
+          @include transform(translate(-8px, -28px));
+          font-size: 10px;
+        }
+      }
+      @media only screen and (max-width: 350px){
+        input, label{ font-size: 13px; }
+        
+      }
+      // buttons -------------------
+      #buttons{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        .acct{
+          flex-grow: 0;
+          padding: 10px;
+        }
+        @media screen and (max-width: 300px){
+          .acct{
+            flex-grow: 1;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+// add a before background
+#anime::before{
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 500px;
+
+  // set the rotation origin (center)
+  transform-origin: bottom right;
+
+  // colors
+  background: linear-gradient(to bottom, $c3, $c3, transparent);
+
+  // rotate anime
+  @include animation(colRotation1, 7s);
+  @keyframes colRotation1 {
+    from{ @include transform(rotate(0deg)); }
+    to{ @include transform(rotate(360deg)); }
+  }
+}
+// add an after background
+#anime::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 500px;
+
+  // set the rotation origin (center)
+  transform-origin: top left;
+
+  // colors
+  background: linear-gradient(to top, $c3, $c3, transparent);
+
+  // rotate anime
+  @include animation(colRotation2, 7s);
+  @keyframes colRotation2 {
+    from{ @include transform(rotate(0deg)); }
+    to{ @include transform(rotate(360deg)); }
+  }
+}
+@media only screen and (max-width: 992px){
+  #anime{
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 600px){
+  #anime{
+    width: 97%;
+  }
+}
+@media only screen and (max-width: 235px){
+  #anime{
+    height: fit-content;
+  }
+  #buttons{ margin-bottom: 0 !important; }
+}

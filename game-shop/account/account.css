@@ -1,0 +1,227 @@
+#anime {
+  width: 50%;
+  height: 500px;
+  margin: 30px auto;
+  border-radius: 1rem;
+  padding: 2px;
+  background-color: rgb(48, 47, 47);
+  position: relative;
+  overflow: hidden;
+}
+#anime #infos {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: black;
+  border-radius: 1rem;
+  color: gray;
+  padding: 10px;
+}
+#anime #infos h1 {
+  margin: 0;
+  padding: 10px 10px 40px;
+  color: rgb(48, 47, 47);
+  text-align: center;
+  font-family: Audiowide, cursive;
+}
+#anime #infos .form1 {
+  text-align: center;
+}
+#anime #infos .form1 section {
+  margin-bottom: 40px;
+  position: relative;
+}
+#anime #infos .form1 input {
+  all: unset;
+  color: black;
+  background-color: transparent;
+  width: 70%;
+  padding: 10px;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  transition: 500ms;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  -moz-transition: 500ms;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+#anime #infos .form1 label {
+  z-index: 1;
+  position: absolute;
+  padding: 10px;
+  left: 15%;
+  font-family: Audiowide, cursive;
+  transition: 500ms;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  -moz-transition: 500ms;
+}
+#anime #infos .form1 .h8t {
+  background: magenta;
+  height: 1px;
+  width: 70%;
+  border-radius: 0.75rem;
+  position: absolute;
+  transition: 500ms;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  -moz-transition: 500ms;
+  transform: translateX(20%);
+  -o-transform: translateX(20%);
+  -webkit-transform: translateX(20%);
+  -moz-transform: translateX(20%);
+  -ms-transform: translateX(20%);
+}
+#anime #infos .form1 input:focus ~ label, #anime #infos .form1 input:valid ~ label {
+  transform: translate(-15px, -28px);
+  -o-transform: translate(-15px, -28px);
+  -webkit-transform: translate(-15px, -28px);
+  -moz-transform: translate(-15px, -28px);
+  -ms-transform: translate(-15px, -28px);
+  font-size: 13px;
+}
+#anime #infos .form1 input:focus ~ label ~ .h8t, #anime #infos .form1 input:valid ~ label ~ .h8t {
+  height: 38px;
+  transform: translate(20%, -38px);
+  -o-transform: translate(20%, -38px);
+  -webkit-transform: translate(20%, -38px);
+  -moz-transform: translate(20%, -38px);
+  -ms-transform: translate(20%, -38px);
+}
+@media only screen and (max-width: 450px) {
+  #anime #infos .form1 input {
+    width: 99%;
+    padding: 10px 0;
+  }
+  #anime #infos .form1 label {
+    left: 0;
+  }
+  #anime #infos .form1 .h8t {
+    width: 100%;
+    transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+  }
+  #anime #infos .form1 input:focus ~ label ~ .h8t, #anime #infos .form1 input:valid ~ label ~ .h8t {
+    transform: translateY(-38px);
+    -o-transform: translateY(-38px);
+    -webkit-transform: translateY(-38px);
+    -moz-transform: translateY(-38px);
+    -ms-transform: translateY(-38px);
+  }
+  #anime #infos .form1 input:focus ~ label, #anime #infos .form1 input:valid ~ label {
+    transform: translate(-8px, -28px);
+    -o-transform: translate(-8px, -28px);
+    -webkit-transform: translate(-8px, -28px);
+    -moz-transform: translate(-8px, -28px);
+    -ms-transform: translate(-8px, -28px);
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  #anime #infos .form1 input, #anime #infos .form1 label {
+    font-size: 13px;
+  }
+}
+#anime #infos .form1 #buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+#anime #infos .form1 #buttons .acct {
+  flex-grow: 0;
+  padding: 10px;
+}
+@media screen and (max-width: 300px) {
+  #anime #infos .form1 #buttons .acct {
+    flex-grow: 1;
+    margin-bottom: 10px;
+  }
+}
+
+#anime::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 500px;
+  transform-origin: bottom right;
+  background: linear-gradient(to bottom, magenta, magenta, transparent);
+  animation: colRotation1 7s infinite linear;
+  -webkit-animation: colRotation1 7s infinite linear;
+  -o-animation: colRotation1 7s infinite linear;
+  -moz-animation: colRotation1 7s infinite linear;
+}
+@keyframes colRotation1 {
+  from {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+
+#anime::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 500px;
+  transform-origin: top left;
+  background: linear-gradient(to top, magenta, magenta, transparent);
+  animation: colRotation2 7s infinite linear;
+  -webkit-animation: colRotation2 7s infinite linear;
+  -o-animation: colRotation2 7s infinite linear;
+  -moz-animation: colRotation2 7s infinite linear;
+}
+@keyframes colRotation2 {
+  from {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #anime {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #anime {
+    width: 97%;
+  }
+}
+@media only screen and (max-width: 235px) {
+  #anime {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #buttons {
+    margin-bottom: 0 !important;
+  }
+}/*# sourceMappingURL=account.css.map */

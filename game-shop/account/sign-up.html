@@ -4,32 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop</title>
+    <title>SIGN-UP</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="./shop.css" />
+    <!-- css for nav & footer -->
+    <link rel="stylesheet" href="../shop.css" />
+
+    <!-- css for account -->
+    <link rel="stylesheet" href="./account.css"/>
 
     <!-- icon -->
-    <link rel="icon" type="image/x-icon" href="./media/images/logo.png" />
+    <link rel="icon" type="image/x-icon" href="../media/images/logo.png" />
 
     <!-- google font Audiowide -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide&effect=neon"/>
   </head>
   <body>
-    <header>
-      <section id="logo">
-        <img src="./media/images/logo.png" alt="logo" />
-      </section>
-
-      <section id="account">
-        <button class="acct" onclick="window.open('./account/sign-in.html')">SIGN IN</button>
-        <button class="acct" onclick="window.open('./account/sign-up.html')">SIGN UP</button>
-      </section>
-    </header>
-
     <nav>
       <div id="left">
-        <section id="home" onclick="window.open('#logo', '_self');">
+        <section id="home" onclick="window.open('../shopping.html#logo', '_self');">
           <aside>HOME</aside>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +41,6 @@
       </div>
 
       <div id="right">
-        
         <section id="search" onclick="openSearch()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,19 +59,33 @@
         </section>
 
         <section id="cart" onclick="openCart()">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-shopping-cart"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
             <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
             <path d="M17 17h-11v-14h-2"></path>
             <path d="M6 5l14 1l-1 7h-13"></path>
-         </svg>
+          </svg>
         </section>
 
         <section id="sidebar" onclick="openRightMenu()">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-list"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M9 6l11 0"></path>
             <path d="M9 12l11 0"></path>
@@ -93,67 +98,48 @@
       </div>
     </nav>
 
-    <div id="bg-image">
-      <picture>
-        <source media="(max-width: 600px)" srcset="./media/images/luffy.jpg" />
-        <img src="./media/images/3-bros.jpg" />
-      </picture>
-      <section class="font-effect-neon">Explore a world of excitement</section>
-    </div>
+    <!-- sign up code here -->
+    <main id="anime">
+      <!-- content -->
+      <div id="infos"> 
+        <h1 class="font-effect-neon">SIGN UP</h1>
+        <form class="form1">
+          <section id="email">
+            <input type="email" id="mail" name="email" required/>
+            <label for="mail">Email</label>
+            <aside class="h8t"></aside>
+          </section>
 
-    <div id="main">
-      <aside id="menu">
-        <h2>Context Menu</h2>
-        <a href="#">Keyboard</a>
-        <a href="#">Mouse</a>
-        <a href="#">Headphones</a>
-        <a href="#">Gaming-Chair</a>
-        <a href="#">Finger-Sleeves</a>
-        <a href="#">Gift-Cards</a>
-      </aside>
+          <section id="username">
+            <input type="text" id="user" name="user" required/>
+            <label for="user">Username</label>
+            <aside class="h8t"></aside>
+          </section>
 
-      <main>
-        <h1>Catalog</h1>
-        <div id="img-contain">
-          <section class="img-card">
-            <div>
-              <img src="./media/images/keyboard.png" />
-              <article>Keyboards</article>
-            </div>
+          <section id="password">
+            <input type="password" id="pass" name="pass" required/>
+            <label for="pass">Password</label>
+            <aside class="h8t"></aside>
           </section>
-          <section class="img-card">
-            <div>
-              <img src="./media/images/mouse.png" />
-              <article>Mice</article>
-            </div>
+
+          <section id="password-c">
+            <input type="password" id="pass-c" name="pass-c" required/>
+            <label for="pass-c">Confirm Password</label>
+            <aside class="h8t"></aside>
           </section>
-          <section class="img-card">
-            <div>
-              <img src="./media/images/headphones.png" />
-              <article>headphones</article>
-            </div>
+
+          <section id="buttons">
+            <button class="acct" type="submit">  
+              SIGN IN
+            </button>
+            <button class="acct" type="button" 
+            onclick="window.open('./sign-up.html', '_self');">
+              REGISTER
+            </button>
           </section>
-          <section class="img-card">
-            <div>
-              <img src="./media/images/gaming-chair.png" />
-              <article>Gaming Chairs</article>
-            </div>
-          </section>
-          <section class="img-card">
-            <div>
-              <img src="./media/images/finger-sleeves.jpg" />
-              <article>Finger Sleeves</article>
-            </div>
-          </section>
-          <section class="img-card">
-            <div>
-              <img src="./media/images/gift-cards.png" />
-              <article>Gift Cards</article>
-            </div>
-          </section>
-        </div>
-      </main>
-    </div>
+        </form>
+      </div>
+    </main>
 
     <footer>
       <section id="copyright">all rights reserved &copy;</section>
