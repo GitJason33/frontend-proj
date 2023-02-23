@@ -4,17 +4,17 @@
 
 body, html {
   margin: 0;
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(48, 47, 47);
 }
 
 .cp1, header #account button {
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(48, 47, 47);
   color: magenta;
 }
 
 .cp2, header #account button:hover {
   background-color: magenta;
-  color: rgb(41, 41, 41);
+  color: rgb(48, 47, 47);
 }
 
 .flex, #bg-image section, nav section, nav #home, nav div article, nav div, nav, header #account, header {
@@ -67,7 +67,7 @@ header #account button {
   flex-grow: 1;
 }
 header #account button:hover {
-  border-color: rgb(41, 41, 41);
+  border-color: rgb(48, 47, 47);
   cursor: pointer;
 }
 
@@ -85,7 +85,7 @@ header #account button:hover {
 /*----------- Header end -----------*/
 /*----------- navigation bar -----------*/
 nav {
-  background: rgb(41, 41, 41);
+  background: rgb(48, 47, 47);
   color: magenta;
   box-shadow: 0 2px 3px magenta;
   flex-wrap: nowrap;
@@ -132,7 +132,7 @@ nav input {
   color: magenta;
   padding: 10px;
   padding-left: 35px;
-  border: 2px ridge rgb(41, 41, 41);
+  border: 2px ridge rgb(48, 47, 47);
   border-radius: 1rem;
   cursor: text;
   height: 20px;
@@ -287,7 +287,7 @@ nav input {
   justify-content: space-around;
 }
 #main main #img-contain .img-card {
-  margin-bottom: 25px;
+  margin: 0 5px 25px;
   border: 1px solid black;
   text-align: center;
   transition: 500ms;

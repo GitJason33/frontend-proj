@@ -305,10 +305,10 @@ nav{
          justify-content: space-around;
 
          .img-card{
-            margin-bottom: 25px;
+            margin: 0 5px 25px;
             border: 1px solid $c4;
             text-align: center;
-            @include transition(500ms);
+            @include transition(500ms); 
             background-color: $c4;
             box-shadow: 0 4px 8px 1px rgba(255, 0, 255, 0.199), 0 6px 20px 1px rgba(255, 0, 255, 0.19);
             
