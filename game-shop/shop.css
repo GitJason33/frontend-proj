@@ -44,7 +44,7 @@ header {
   justify-content: space-between;
 }
 header #logo img {
-  width: 75px;
+  width: 125px;
   height: auto;
 }
 
@@ -72,7 +72,7 @@ header #logo img {
   cursor: pointer;
 }
 
-@media screen and (max-width: 210px) {
+@media screen and (max-width: 279px) {
   header {
     flex-direction: column;
   }
