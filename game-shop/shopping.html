@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./shop.css" />
+
+    <!-- icon -->
+    <link rel="icon" type="image/x-icon" href="./media/images/logo.png" />
+
+    <!-- google font Audiowide -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide&effect=neon"/>
+  </head>
+  <body>
+    <header>
+      <section id="logo">
+        <img src="./media/images/logo.png" alt="logo" />
+      </section>
+
+      <section id="account">
+        <button>SIGN IN</button>
+        <button>SIGN UP</button>
+      </section>
+    </header>
+
+    <nav>
+      <div id="left">
+        <section id="home" onclick="window.open('#logo', '_self');">
+          <aside>HOME</aside>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-home"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+          </svg>
+        </section>
+      </div>
+
+      <div id="right">
+        
+        <section id="search" onclick="openSearch()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-search"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+            <path d="M21 21l-6 -6"></path>
+          </svg>
+          <input type="text" />
+        </section>
+
+        <section id="cart" onclick="openCart()">
+          <svg 
+          xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+            <path d="M17 17h-11v-14h-2"></path>
+            <path d="M6 5l14 1l-1 7h-13"></path>
+         </svg>
+        </section>
+
+        <section id="sidebar" onclick="openRightMenu()">
+          <svg 
+          xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 6l11 0"></path>
+            <path d="M9 12l11 0"></path>
+            <path d="M9 18l11 0"></path>
+            <path d="M5 6l0 .01"></path>
+            <path d="M5 12l0 .01"></path>
+            <path d="M5 18l0 .01"></path>
+          </svg>
+        </section>
+      </div>
+    </nav>
+
+    <div id="bg-image">
+      <picture>
+        <source media="(max-width: 600px)" srcset="./media/images/luffy.jpg" />
+        <img src="./media/images/3-bros.jpg" />
+      </picture>
+      <section class="font-effect-neon">Explore a world of excitement</section>
+    </div>
+
+    <div id="main">
+      <aside id="menu">
+        <h2>Context Menu</h2>
+        <a href="#">Keyboard</a>
+        <a href="#">Mouse</a>
+        <a href="#">Headphones</a>
+        <a href="#">Gaming-Chair</a>
+        <a href="#">Finger-Sleeves</a>
+        <a href="#">Gift-Cards</a>
+      </aside>
+
+      <main>
+        <h1>Catalog</h1>
+        <div id="img-contain">
+          <section class="img-card">
+            <div>
+              <img src="./media/images/keyboard.png" />
+              <article>Keyboards</article>
+            </div>
+          </section>
+          <section class="img-card">
+            <div>
+              <img src="./media/images/mouse.png" />
+              <article>Mice</article>
+            </div>
+          </section>
+          <section class="img-card">
+            <div>
+              <img src="./media/images/headphones.png" />
+              <article>headphones</article>
+            </div>
+          </section>
+          <section class="img-card">
+            <div>
+              <img src="./media/images/gaming-chair.png" />
+              <article>Gaming Chairs</article>
+            </div>
+          </section>
+          <section class="img-card">
+            <div>
+              <img src="./media/images/finger-sleeves.jpg" />
+              <article>Finger Sleeves</article>
+            </div>
+          </section>
+          <section class="img-card">
+            <div>
+              <img src="./media/images/gift-cards.png" />
+              <article>Gift Cards</article>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <section id="copyright">all rights reserved &copy;</section>
+      <section id="locate">We are located in Lebanon</section>
+
+      <section id="whatsapp">
+        <a href="http://wa.me/+96112345678">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-whatsapp"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+            <path
+              d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+            ></path>
+          </svg>
+          +961 12 345 678
+        </a>
+      </section>
+      <section id="instagram">
+        <a href="https://ig.me/instagram">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-instagram"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+            ></path>
+            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+            <path d="M16.5 7.5l0 0"></path>
+          </svg>
+          Instagram
+        </a>
+      </section>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+@mixin transfom($v){
+   transform: $v;
+   -o-transform: $v;
+   -webkit-transform: $v;
+   -moz-transform: $v;
+   -ms-transform: $v;
+}
+@mixin filter($v){
+   filter: $v;
+   -webkit-filter: $v;
+}
+@mixin transition($v){
+   transition: $v;
+   -webkit-transition: $v;
+   -o-transition: $v;
+   -moz-transition: $v;
+}

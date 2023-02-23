@@ -1,0 +1,388 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  background-color: rgb(41, 41, 41);
+}
+
+.cp1, header #account button {
+  background-color: rgb(41, 41, 41);
+  color: magenta;
+}
+
+.cp2, header #account button:hover {
+  background-color: magenta;
+  color: rgb(41, 41, 41);
+}
+
+.flex, #bg-image section, nav section, nav #home, nav div article, nav div, nav, header #account, header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+/*----------- SVG -----------*/
+.svg, section[id] svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2px;
+  transform: translateY(2px);
+  -o-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+}
+
+/*----------- SVG end -----------*/
+/*----------- Header -----------*/
+header {
+  background: purple;
+  padding: 7px;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+}
+header #logo img {
+  width: 75px;
+  height: auto;
+}
+header #account {
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+header #account button {
+  transition: 400ms;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  -moz-transition: 400ms;
+  display: block;
+  margin: 0 3px;
+  padding: 7px;
+  font-weight: 900;
+  font-family: cursive;
+  border: 2px ridge purple;
+  border-radius: 0.5rem;
+  flex-grow: 1;
+}
+header #account button:hover {
+  border-color: rgb(41, 41, 41);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 210px) {
+  header {
+    flex-direction: column;
+  }
+  header #logo {
+    margin-bottom: 10px;
+  }
+  header #account {
+    width: 100%;
+  }
+}
+/*----------- Header end -----------*/
+/*----------- navigation bar -----------*/
+nav {
+  background: rgb(41, 41, 41);
+  color: magenta;
+  box-shadow: 0 2px 3px magenta;
+  flex-wrap: nowrap;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  z-index: 5 !important;
+}
+nav div {
+  height: 50px;
+  flex-wrap: nowrap;
+}
+nav div article {
+  height: 100%;
+}
+nav #home aside {
+  display: none;
+  transform: translateY(4px);
+  -o-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  -moz-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  font-family: Courier;
+  font-size: 24px;
+  font-weight: 900;
+}
+nav section {
+  padding: 0 15px;
+  height: 100%;
+}
+nav section:hover {
+  background-color: black;
+  cursor: pointer;
+  transition: 600ms;
+  -webkit-transition: 600ms;
+  -o-transition: 600ms;
+  -moz-transition: 600ms;
+}
+nav input {
+  all: unset;
+  display: none;
+  background: purple;
+  font-size: 20px;
+  color: magenta;
+  padding: 10px;
+  padding-left: 35px;
+  border: 2px ridge rgb(41, 41, 41);
+  border-radius: 1rem;
+  cursor: text;
+  height: 20px;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+@media screen and (min-width: 450px) {
+  #home aside {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  #right input {
+    display: inline-block !important;
+  }
+  #right {
+    width: 60%;
+    justify-content: space-between;
+  }
+  #search {
+    height: 100%;
+    flex-grow: 1;
+  }
+  #sidebar {
+    flex-shrink: 0;
+  }
+  #search svg {
+    position: absolute;
+    transform: translateX(7px);
+    -o-transform: translateX(7px);
+    -webkit-transform: translateX(7px);
+    -moz-transform: translateX(7px);
+    -ms-transform: translateX(7px);
+  }
+}
+@media screen and (max-width: 231px) {
+  nav svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+/*----------- navigation bar end -----------*/
+/*----------- luffy image -----------*/
+#bg-image {
+  max-width: 100%;
+  position: relative;
+}
+#bg-image img {
+  width: 100%;
+  height: auto;
+  filter: brightness(50%);
+  -webkit-filter: brightness(50%);
+}
+#bg-image picture {
+  z-index: -1;
+}
+#bg-image section {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  color: magenta;
+  font: bold 30px Audiowide, cursive;
+}
+
+@media screen and (min-width: 300px) {
+  #bg-image section {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 450px) {
+  #bg-image section {
+    font-size: 60px;
+  }
+}
+@media screen and (min-width: 992px) {
+  #bg-image section {
+    font-size: 75px;
+  }
+}
+/*----------- luffy image end -----------*/
+/*----------- Catalog -------------*/
+#main {
+  display: flex;
+  justify-content: space-between;
+  font-family: Audiowide, fantasy;
+  /*----------- context menu -----------*/
+  /*----------- context menu end -----------*/
+  /*----------- main section -----------*/
+  /*----------- main section -----------*/
+}
+#main #menu {
+  flex-shrink: 0;
+  flex-grow: 1;
+  background-color: purple;
+  border-right: 1px dashed black;
+  box-shadow: 2px 0 30px 5px magenta;
+  text-align: center;
+}
+#main #menu h2 {
+  padding: 0 7px 19.92px;
+  margin-bottom: 0;
+  color: black;
+  text-align: center;
+  border-bottom: 2px dashed black;
+  text-shadow: 0 3px 10px magenta, 3px 0 10px magenta, -3px 0 10px magenta, 0 -3px 10px magenta;
+}
+#main #menu a {
+  color: black;
+  display: block;
+  text-decoration: none;
+  padding: 7px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px dashed black;
+  transition: 400ms;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  -moz-transition: 400ms;
+}
+#main #menu a:last-child {
+  border: none;
+}
+#main #menu a:hover {
+  background: black;
+  color: magenta;
+  font-weight: normal;
+}
+#main main {
+  width: 83%;
+}
+@media screen and (max-width: 600px) {
+  #main #menu {
+    display: none;
+  }
+  #main main {
+    width: 100% !important;
+  }
+}
+#main main h1 {
+  text-align: center;
+  font-size: 40px;
+  color: black;
+  text-shadow: 0 3px 30px magenta, 3px 0 30px magenta, -3px 0 30px magenta, 0 -3px 30px magenta;
+}
+#main main #img-contain {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: space-around;
+}
+#main main #img-contain .img-card {
+  margin-bottom: 25px;
+  border: 1px solid black;
+  text-align: center;
+  transition: 500ms;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  -moz-transition: 500ms;
+  background-color: black;
+  box-shadow: 0 4px 8px 1px rgba(255, 0, 255, 0.199), 0 6px 20px 1px rgba(255, 0, 255, 0.19);
+}
+#main main #img-contain .img-card img {
+  max-width: 300px;
+  height: auto;
+}
+#main main #img-contain .img-card article {
+  padding: 0 5px 5px;
+  color: magenta;
+}
+#main main #img-contain .img-card:hover {
+  border-color: purple;
+  cursor: pointer;
+  box-shadow: 0 4px 30px 20px rgb(255, 0, 255), 0 6px 40px 20px rgb(255, 0, 255);
+}
+@media screen and (min-width: 992px) {
+  #main #img-contain {
+    grid-template-columns: auto auto !important;
+  }
+  #main #img-contain .img-card img {
+    height: 250px !important;
+  }
+}
+@media screen and (max-width: 353px) {
+  #main main h1 ~ #img-contain img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*----------- Catalog end -----------*/
+/*----------- footer -----------*/
+footer {
+  background: purple;
+  position: relative;
+  z-index: 5;
+  padding: 7px;
+  border-top: 1px dashed black;
+  display: flex;
+  flex-flow: row wrap;
+}
+footer section {
+  width: 100%;
+  padding: 7px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+footer section a {
+  text-decoration: none;
+  color: black;
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  -moz-transition: 300ms;
+}
+footer section a:hover {
+  text-decoration: underline;
+  color: magenta;
+  text-shadow: -1px 0 5px black, 0 1px 5px black, 1px 0 5px black, 0 -1px 5px black;
+}
+
+@media screen and (min-width: 768px) {
+  footer section {
+    width: 50%;
+    text-align: left;
+  }
+  #copyright {
+    order: 1;
+  }
+  #whatsapp {
+    order: 2;
+  }
+  #locate {
+    order: 3;
+  }
+  #instagram {
+    order: 4;
+  }
+}
+@media screen and (max-width: 330px) {
+  footer section {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  footer {
+    box-shadow: 0 -1px 20px 5px rgb(255, 0, 255), 0 -1px 20px 5px rgb(255, 0, 255);
+  }
+}
+/*----------- footer end -----------*//*# sourceMappingURL=shop.css.map */
