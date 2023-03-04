@@ -1,0 +1,60 @@
+.labels {
+  margin: 10px 0;
+  display: grid;
+  display: -moz-grid;
+  grid-template-columns: 40% 10% 25% 25%;
+  color: rgb(224, 4, 224);
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 40% 10% 25% 20% 5%;
+  color: rgb(224, 4, 224);
+  border-width: 2px;
+  border-style: ridge;
+  border-color: rgb(180, 5, 180);
+  margin: 10px 3px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.item article:not(.image), .item .image div {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.item .image img {
+  max-width: 200px;
+  float: left;
+}
+.item .quantity {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.item .quantity div {
+  padding: 10px 15px;
+  border: 1px solid rgb(224, 4, 224);
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.item .quantity div:not(div:nth-child(2)) {
+  cursor: pointer;
+}
+.item .quantity div:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.item .quantity div:nth-child(2) {
+  border-width: 1px 0;
+}
+.item .quantity div:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.item article[onclick] {
+  font-size: 23px;
+}/*# sourceMappingURL=cart.css.map */

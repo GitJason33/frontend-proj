@@ -1,0 +1,59 @@
+@import "vars";
+@import "vendors";
+
+.labels{
+  margin: 10px 0;
+  @include grid;
+  grid-template-columns: 40% 10% 25% 25%;
+  color: $mainCol3;
+  font-family: $fontTitle;
+}
+
+// item's card --------------------------
+.item{
+  display: grid;
+  grid-template-columns: 40% 10% 25% 20% 5%;
+  color: $mainCol3;
+  @include bord(2px);
+  margin: 10px 3px;
+  overflow: hidden;
+  border-radius: $bordRad;
+  margin-bottom: 20px;
+
+  article:not(.image), .image div{
+    @include perfect_center;
+  }
+
+  .image img{
+    max-width: 200px; 
+    float: left;
+  }
+
+  .quantity{
+    @include flex(nowrap);
+    $radi: 5px;
+
+    div{
+      padding: 10px 15px;
+      border: 1px solid $mainCol3;
+      height: fit-content;
+    }
+    div:not(div:nth-child(2)){
+      cursor: pointer;
+    }
+    div:first-child{
+      border-radius: $radi 0 0 $radi;
+    }
+    div:nth-child(2){
+      border-width: 1px 0;
+    }
+    div:last-child{
+      border-radius: 0 $radi $radi 0;
+    }
+  }
+
+  article[onclick]{
+    font-size: 23px;
+  }
+}
+// item's card end--------------------------

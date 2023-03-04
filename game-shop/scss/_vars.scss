@@ -1,0 +1,40 @@
+// colors
+$mainCol1: purple;
+$mainCol2: rgb(180, 5, 180);
+$mainCol3: rgb(224, 4, 224);
+$mainCol4: rgb(253, 46, 253);
+$mainCol5: rgb(253, 123, 253);
+
+$lightCol: rgb(216, 211, 211);
+$darkCol: rgb(44, 7, 44);
+
+// fonts
+$fontText: Garamond, serif;
+$fontTitle: Audiowide, "Lucida Handwriting", cursive;
+
+// spacings
+$pad: 7px;
+$marg: 25px;
+
+// border styling
+@mixin bord($w: 1px, $s: ridge, $c: $mainCol2){
+  border-width: $w;
+  border-style: $s;
+  border-color: $c;
+}
+$bord: 1px ridge $mainCol2;
+$bordRad: 8px;
+
+// medias
+$small: "max-width: 300px";
+$phone: "min-width: 301px";
+$bigPhone: "min-width: 500px";
+$tablet: "min-width: 768px";
+$laptop: "min-width: 992px";
+$desktop: "min-width: 1200px";
+$huge: "min-width: 1800px";
+
+
+
+
+

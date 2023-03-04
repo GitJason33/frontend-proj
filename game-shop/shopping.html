@@ -7,7 +7,7 @@
     <title>Shop</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="./shop.css" />
+    <link rel="stylesheet" href="./css/shop.css" />
 
     <!-- icon -->
     <link rel="icon" type="image/x-icon" href="./media/images/logo.png" />
@@ -29,7 +29,7 @@
 
     <nav>
       <div id="left">
-        <section id="home" onclick="window.open('#logo', '_self');">
+        <section id="home" onclick="window.open('./shopping.html', '_self');">
           <aside>HOME</aside>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@
           <input type="text" />
         </section>
 
-        <section id="cart" onclick="openCart()">
+        <section id="cart" onclick="window.open('./cart.html', '_self');">
           <svg 
           xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -94,16 +94,12 @@
     </nav>
 
     <div id="bg-image">
-      <picture>
-        <source media="(max-width: 600px)" srcset="./media/images/luffy.jpg" />
-        <img src="./media/images/3-bros.jpg" />
-      </picture>
       <section class="font-effect-neon">Explore a world of excitement</section>
     </div>
 
     <div id="main">
       <aside id="menu">
-        <h2>Context Menu</h2>
+        <h2 class="font-effect-neon">Context Menu</h2>
         <a href="#">Keyboard</a>
         <a href="#">Mouse</a>
         <a href="#">Headphones</a>
@@ -112,8 +108,8 @@
         <a href="#">Gift-Cards</a>
       </aside>
 
-      <main>
-        <h1>Catalog</h1>
+      <main id="main-content">
+        <h1 class="font-effect-neon">Catalog</h1>
         <div id="img-contain">
           <section class="img-card">
             <div>
@@ -156,10 +152,10 @@
     </div>
 
     <footer>
-      <section id="copyright">all rights reserved &copy;</section>
+      <section id="copyright">&copy; copyright 2023</section>
       <section id="locate">We are located in Lebanon</section>
 
-      <section id="whatsapp">
+      <section class="social-whatsapp">
         <a href="http://wa.me/+96112345678">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +178,7 @@
           +961 12 345 678
         </a>
       </section>
-      <section id="instagram">
+      <section class="social-instagram">
         <a href="https://ig.me/instagram">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,143 @@
+// first things first: colors. 
+// choose the main color with gradiations up to 5
+// example:
+$mainCol1: rgb(112, 2, 112);
+$mainCol2: rgb(180, 5, 180);
+$mainCol3: rgb(224, 4, 224);
+$mainCol4: rgb(253, 46, 253);
+$mainCol5: rgb(253, 123, 253);
+
+// choose dark and light colors (other than exact black/white)
+// these are meant for backgrounds and hover effects mostly
+// example:
+$lightCol1: rgb(233, 233, 233);
+$lightCol2: rgb(216, 211, 211);
+
+$darkCol1: #161414;;
+$darkCol2: #292828;
+$darkCol3: rgb(53, 9, 53);
+
+// second thing is specifying site fonts
+// give at least 3 fallback fonts
+
+$fontText: Arial, Helvetica, sans-serif;
+$fontTitle: Georgia, "Times New Roman", serif;
+
+// third thing is common spacings of paddings and margins
+$pad: 10px;
+$marg: 25px;
+
+// fourth thing is border styling
+$bord: 1px solid $darkCol4;
+$bordRad: 8px;
+
+// fifth and it's very important: responsive breakpoints
+// it's for media queries
+$small: "max-width: 300px";
+$phone: "min-width: 301px";
+$bigPhone: "min-width: 500px";
+$tablet: "min-width: 768px";
+$laptop: "min-width: 992px";
+$desktop: "min-width: 1200px";
+$huge: "min-width: 1800px";
+
+/** mainly, the page components needed, html ones, are:
+  * header
+  * navigation bar 
+  * side bar
+  * main content
+  * footer 
+  **/
+/** popular JavaScript functionalities to consider learning/ practicing:
+  * search bar
+  * items sorter (by date, by price, a-z, ascending, descending etc.)
+  * cart (for shops)
+  * side bar menu (for smaller devices usually)
+  * pagination
+  * dropdown menu (roller and fading)
+  * zoom for images
+  * scroll fading animations
+  * image slider 
+  *   .animated and non-animated
+  *   .with and without buttons
+  *   .hold and move them left and right
+  * form field input validation
+  *   .username
+  *   .password (security checks)
+  *   .confirm password
+  *   .email
+  *   .birth date
+  *   .
+  * loading screen
+  */
+
+// a map variable is like a javascript associative array
+// written in format:
+$colz: (
+  "b": blue,
+  "r": red,
+  "y": yellow,
+  "g": green
+);
+// is called in the following format: map-get($colz, b)
+
+// &:hover means the parentElement:hover
+// example:
+.button{
+  background: map-get($colz, "r");
+
+  &:hover{
+    background: map-get($map: $colz, $key: "b");
+  }
+}
+
+// '&' also has a cool feature when nesting, and the nested element
+// has a similar name to the parent, it can be added with:
+.mainContain{
+  color: $darkCol3;
+
+  #{&}Paragraph{
+    color: $lightCol2;
+  }
+}
+
+// to write functions:
+@function color($c){
+  @return map-get($colz, $c);
+}
+
+// then use it normally in css rulesets:
+h1{
+  color: color(r);
+}
+
+// you can make consitions using: (worst example lol)
+@mixin grid-template-cols($n){
+  @if ($n == 3){
+    grid-template-columns: auto auto auto;
+  }
+  @else if ($n == 2){
+    grid-template-columns: auto auto;
+  }
+  @else{
+    grid-template-columns: auto;
+  }
+}
+
+#grid-container{
+  display: grid;
+  @include grid-template-cols(3);
+}
+
+// you can make media queries easier using mixins
+@mixin medias($breakpoint){
+  @media only screen and ($breakpoint){
+    @content;
+  }
+}
+$miniP: "min-width: 300px";
+@include media($miniP){
+  #grid-container{
+    @include grid-template-cols(1);
+  }
+}

@@ -1,0 +1,458 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: rgb(253, 123, 253);
+  color: rgb(44, 7, 44);
+}
+
+::selection {
+  background: rgb(253, 123, 253);
+  color: rgb(44, 7, 44);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(44, 7, 44);
+  margin: 0;
+  font-family: Garamond, serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+svg {
+  height: 24px;
+  width: 24px;
+  stroke-width: 2px;
+}
+
+svg:not(#home svg) {
+  transform: translateY(2px);
+  -o-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+}
+
+header, footer, #menu {
+  background-color: purple;
+}
+
+nav section, #menu, .img-card div,
+section[class^=social-] {
+  transition: 400ms;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  -moz-transition: 400ms;
+}
+
+/*------------------- HEADER -------------------*/
+header {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px ridge rgb(180, 5, 180);
+}
+header #logo img {
+  max-width: 150px;
+  height: auto;
+}
+header #account {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+@media only screen and (min-width: 500px) {
+  header #account {
+    width: 50%;
+  }
+}
+header button.acct {
+  all: unset;
+  display: block;
+  border-width: 1px;
+  border-style: ridge;
+  border-color: rgb(253, 46, 253);
+  border-radius: 8px;
+  transition: 400ms;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  -moz-transition: 400ms;
+  background-color: rgb(44, 7, 44);
+  color: rgb(224, 4, 224);
+  cursor: pointer;
+  padding: 10.5px;
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+  font-weight: 600;
+  flex-grow: 1;
+  text-align: center;
+  margin: 3.1111111111px;
+}
+header button.acct:hover {
+  border-width: 1px;
+  border-style: ridge;
+  border-color: rgb(253, 46, 253);
+  background-color: rgb(224, 4, 224);
+  color: rgb(44, 7, 44);
+}
+@media only screen and (min-width: 500px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/*------------------- HEADER -------------------*/
+/*------------------- NAVIGATION BAR -------------------*/
+nav, #left, #home, #right {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  z-index: 4;
+  color: rgb(180, 5, 180);
+  background-color: rgb(44, 7, 44);
+  border-bottom: 1px ridge rgb(180, 5, 180);
+  box-shadow: 0 1px 3px rgb(224, 4, 224);
+}
+nav #left, nav #right {
+  height: 50px;
+}
+nav section[id] {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  padding: 14px;
+  align-items: center;
+}
+nav section[id]:hover {
+  color: rgb(44, 7, 44);
+  background-color: rgb(224, 4, 224);
+}
+nav #home {
+  font-size: 20px;
+  font-weight: bold;
+}
+nav #home aside {
+  display: none;
+}
+@media only screen and (min-width: 301px) {
+  nav #home aside {
+    display: block;
+  }
+}
+nav #right {
+  justify-content: right;
+}
+@media only screen and (min-width: 768px) {
+  nav #right {
+    width: 80%;
+  }
+}
+nav #search {
+  flex-grow: 3;
+  padding: 0 14px;
+  position: relative;
+}
+nav #search input {
+  all: unset;
+  display: none;
+  height: 80%;
+  border-radius: 8px;
+  background-color: rgb(180, 5, 180);
+  color: rgb(44, 7, 44);
+  padding-left: 30px;
+  width: 100%;
+  border: 1px ridge rgb(180, 5, 180);
+  font-size: 20px;
+  font-weight: 900;
+  cursor: text;
+}
+@media only screen and (min-width: 768px) {
+  nav #search input {
+    display: block;
+  }
+}
+nav #search input:focus {
+  border-color: rgb(44, 7, 44);
+}
+nav #search svg {
+  z-index: 4;
+  left: 18px;
+}
+@media only screen and (min-width: 768px) {
+  nav #search svg {
+    position: absolute;
+    color: rgb(44, 7, 44);
+    transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+  }
+}
+@media only screen and (min-width: 768px) {
+  nav #search {
+    width: 82%;
+  }
+}
+
+/*------------------- NAVIGATION BAR -------------------*/
+/*------------ luffy & bros photo ------------*/
+#bg-image {
+  background-image: url("../media/images/luffy.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: calc(150vw - 27px);
+}
+@media only screen and (min-width: 685px) {
+  #bg-image {
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #bg-image {
+    background-image: url("../media/images/3-bros.jpg");
+    background-size: contain;
+    height: calc(50vw - 8px);
+  }
+}
+#bg-image section[class] {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  color: rgb(253, 46, 253);
+  background: rgba(0, 0, 0, 0.6);
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+  font-size: 14vw;
+}
+@media only screen and (min-width: 768px) {
+  #bg-image section[class] {
+    font-size: 10vw;
+  }
+}
+
+/*---------------- CONTEXT MENU ----------------*/
+@media only screen and (min-width: 992px) {
+  #main {
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-items: normal;
+  }
+}
+
+#menu {
+  flex-shrink: 0;
+  width: 250px;
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+  position: relative;
+  z-index: 2;
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  #menu {
+    display: block;
+  }
+}
+#menu h2 {
+  color: rgb(44, 7, 44);
+  font-size: 28px;
+  text-align: center;
+  border-bottom: 2px dashed rgb(44, 7, 44);
+  margin: 0;
+  padding: 20px 0 15px;
+}
+#menu a {
+  transition: 400ms;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  -moz-transition: 400ms;
+  display: block;
+  padding: 7px 14px;
+  font-size: 22px;
+}
+#menu a:not(a:last-child) {
+  border-bottom: 1px dashed rgb(44, 7, 44);
+}
+#menu a:hover {
+  color: rgb(224, 4, 224);
+  background-color: rgb(44, 7, 44);
+}
+
+/*---------------- CONTEXT MENU END ----------------*/
+/*---------------- CATALOG -----------------*/
+#main-content {
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  #main-content {
+    width: 75%;
+  }
+}
+#main-content h1 {
+  color: rgb(44, 7, 44);
+  padding: 46.9px 0;
+  margin: 0;
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+  font-size: 70px;
+}
+#main-content #img-contain {
+  display: grid;
+  display: -moz-grid;
+  grid-template-columns: auto;
+  justify-content: space-around;
+}
+@media only screen and (min-width: 768px) {
+  #main-content #img-contain {
+    grid-template-columns: auto auto;
+  }
+}
+#main-content .img-card {
+  margin: 25px;
+  width: 90vw;
+}
+@media only screen and (min-width: 500px) {
+  #main-content .img-card {
+    width: 75vw;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #main-content .img-card {
+    width: 300px;
+  }
+}
+#main-content .img-card div {
+  border: 2px ridge purple;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#main-content .img-card div img {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-width: 768px) {
+  #main-content .img-card div img {
+    height: 250px;
+  }
+}
+#main-content .img-card div article {
+  padding: 7px;
+  color: rgb(224, 4, 224);
+  font-size: 20px;
+  font-weight: bold;
+}
+#main-content .img-card div:hover {
+  border-color: purple;
+  cursor: pointer;
+  box-shadow: 0 4px 30px 20px rgb(255, 0, 255), 0 6px 40px 20px rgb(255, 0, 255);
+}
+
+/*---------------- CATALOG END -----------------*/
+/*---------------- FOOTER ----------------*/
+footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10.5px;
+  font-weight: bold;
+  font-size: 22px;
+  border-top: 1px ridge rgb(44, 7, 44);
+  box-shadow: 0 -1px 20px 5px rgb(255, 0, 255), 0 -1px 20px 5px rgb(255, 0, 255);
+}
+@media only screen and (min-width: 992px) {
+  footer {
+    box-shadow: none;
+  }
+}
+@media only screen and (max-width: 300px) {
+  footer {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  footer {
+    display: grid;
+    display: -moz-grid;
+    grid-template-columns: auto auto;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 300px) {
+  footer svg {
+    height: 16px;
+    width: 16px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+footer #copyright {
+  order: 1;
+}
+footer .social-whatsapp {
+  order: 2;
+}
+footer #locate {
+  order: 3;
+}
+footer .social-instagram {
+  order: 4;
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    font-size: 30px;
+  }
+}
+footer section a {
+  width: 100%;
+  transition: 100ms;
+  -webkit-transition: 100ms;
+  -o-transition: 100ms;
+  -moz-transition: 100ms;
+}
+footer section a:hover {
+  text-decoration: underline;
+  color: rgb(224, 4, 224);
+  text-shadow: -1px 0 5px black, 0 1px 5px black, 1px 0 5px black, 0 -1px 5px black;
+}
+
+/*---------------- FOOTER END ----------------*//*# sourceMappingURL=shop.css.map */

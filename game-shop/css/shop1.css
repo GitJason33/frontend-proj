@@ -1,26 +1,41 @@
 * {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
-body, html {
+::-moz-selection {
+  background: rgb(253, 123, 253);
+  color: rgb(44, 7, 44);
+}
+
+::selection {
+  background: rgb(253, 123, 253);
+  color: rgb(44, 7, 44);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(44, 7, 44);
   margin: 0;
-  background-color: rgb(48, 47, 47);
+  font-family: Garamond, serif;
 }
 
-.cp1, #account .acct, #buttons .acct {
-  background-color: rgb(48, 47, 47);
-  color: magenta;
+a {
+  text-decoration: none;
+  color: unset;
 }
 
-.cp2, #account .acct:hover, #buttons .acct:hover {
-  background-color: magenta;
-  color: rgb(48, 47, 47);
+.cp1, #account .acct,
+#buttons .acct {
+  background-color: rgb(44, 7, 44);
+  color: rgb(224, 4, 224);
 }
 
-.flex, #bg-image section, nav section, nav #home, nav div article, nav div, nav, #account, #buttons, header {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+.cp2, #account .acct:hover,
+#buttons .acct:hover {
+  background-color: rgb(224, 4, 224);
+  color: rgb(44, 7, 44);
 }
 
 /*----------- SVG -----------*/
@@ -40,7 +55,11 @@ body, html {
 header {
   background: purple;
   padding: 7px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px ridge rgb(180, 5, 180);
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
   justify-content: space-between;
 }
 header #logo img {
@@ -48,27 +67,30 @@ header #logo img {
   height: auto;
 }
 
-#account, #buttons {
+#account,
+#buttons {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
   align-items: center;
   justify-content: space-around;
   width: 50%;
 }
-#account .acct, #buttons .acct {
-  transition: 400ms;
-  -webkit-transition: 400ms;
-  -o-transition: 400ms;
-  -moz-transition: 400ms;
+#account .acct,
+#buttons .acct {
   display: block;
   margin: 0 3px;
   padding: 7px;
   font-weight: 900;
-  font-family: cursive;
-  border: 2px ridge purple;
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+  border: 1px ridge rgb(180, 5, 180);
   border-radius: 0.5rem;
   flex-grow: 1;
 }
-#account .acct:hover, #buttons .acct:hover {
-  border-color: rgb(48, 47, 47);
+#account .acct:hover,
+#buttons .acct:hover {
+  border-color: rgb(44, 7, 44);
   cursor: pointer;
 }
 
@@ -86,10 +108,13 @@ header #logo img {
 /*----------- Header end -----------*/
 /*----------- navigation bar -----------*/
 nav {
-  background: rgb(48, 47, 47);
-  color: magenta;
-  box-shadow: 0 2px 3px magenta;
-  flex-wrap: nowrap;
+  background: rgb(44, 7, 44);
+  color: rgb(224, 4, 224);
+  box-shadow: 0 2px 3px rgb(224, 4, 224);
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  align-items: center;
   position: sticky;
   top: 0;
   justify-content: space-between;
@@ -97,10 +122,23 @@ nav {
 }
 nav div {
   height: 50px;
-  flex-wrap: nowrap;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 nav div article {
   height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+nav #home {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 nav #home aside {
   display: none;
@@ -109,44 +147,45 @@ nav #home aside {
   -webkit-transform: translateY(4px);
   -moz-transform: translateY(4px);
   -ms-transform: translateY(4px);
-  font-family: Courier;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 900;
 }
 nav section {
   padding: 0 15px;
   height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 nav section:hover {
   background-color: black;
   cursor: pointer;
-  transition: 600ms;
-  -webkit-transition: 600ms;
-  -o-transition: 600ms;
-  -moz-transition: 600ms;
 }
 nav input {
   all: unset;
   display: none;
   background: purple;
   font-size: 20px;
-  color: magenta;
+  font-weight: 600;
+  color: rgb(44, 7, 44);
   padding: 10px;
   padding-left: 35px;
-  border: 2px ridge rgb(48, 47, 47);
+  border: 1px ridge rgb(180, 5, 180);
   border-radius: 1rem;
   cursor: text;
   height: 20px;
   width: 100%;
-  font-family: sans-serif;
 }
-
-@media screen and (min-width: 450px) {
+nav #search svg {
+  color: rgb(224, 4, 224);
+}
+@media screen and (min-width: 301px) {
   #home aside {
     display: block !important;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
   #right input {
     display: inline-block !important;
   }
@@ -158,9 +197,6 @@ nav input {
     height: 100%;
     flex-grow: 1;
   }
-  #sidebar {
-    flex-shrink: 0;
-  }
   #search svg {
     position: absolute;
     transform: translateX(7px);
@@ -168,6 +204,10 @@ nav input {
     -webkit-transform: translateX(7px);
     -moz-transform: translateX(7px);
     -ms-transform: translateX(7px);
+    color: rgb(44, 7, 44) !important;
+  }
+  #sidebar {
+    flex-shrink: 0;
   }
 }
 @media screen and (max-width: 231px) {
@@ -196,133 +236,136 @@ nav input {
   top: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
   justify-content: center;
   text-align: center;
-  color: magenta;
-  font: bold 30px Audiowide, cursive;
+  color: rgb(224, 4, 224);
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+  font-weight: bold;
+  font-size: 30px;
 }
-
-@media screen and (min-width: 300px) {
+@media only screen and (max-width: 300px) {
   #bg-image section {
     font-size: 40px;
   }
 }
-@media screen and (min-width: 450px) {
+@media only screen and (min-width: 301px) {
   #bg-image section {
     font-size: 60px;
   }
 }
-@media screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   #bg-image section {
     font-size: 75px;
   }
 }
+
 /*----------- luffy image end -----------*/
 /*----------- Catalog -------------*/
 #main {
   display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  align-items: none;
   justify-content: space-between;
-  font-family: Audiowide, fantasy;
+  font-family: Audiowide, "Lucida Handwriting", cursive;
   /*----------- context menu -----------*/
-  /*----------- context menu end -----------*/
-  /*----------- main section -----------*/
-  /*----------- main section -----------*/
 }
 #main #menu {
   flex-shrink: 0;
   flex-grow: 1;
   background-color: purple;
-  border-right: 1px dashed black;
-  box-shadow: 2px 0 30px 5px magenta;
+  border-right: 1px ridge rgb(180, 5, 180);
+  box-shadow: 2px 0 30px 5px rgb(224, 4, 224);
   text-align: center;
+  /*----------- context menu end -----------*/
+  /*----------- main section -----------*/
+  /*----------- main section -----------*/
 }
 #main #menu h2 {
   padding: 0 7px 19.92px;
   margin-bottom: 0;
-  color: black;
+  color: rgb(44, 7, 44);
   text-align: center;
-  border-bottom: 2px dashed black;
-  text-shadow: 0 3px 10px magenta, 3px 0 10px magenta, -3px 0 10px magenta, 0 -3px 10px magenta;
+  border-bottom: 2px dashed rgb(44, 7, 44);
+  text-shadow: 0 3px 10px rgb(224, 4, 224), 3px 0 10px rgb(224, 4, 224), -3px 0 10px rgb(224, 4, 224), 0 -3px 10px rgb(224, 4, 224);
 }
 #main #menu a {
-  color: black;
   display: block;
-  text-decoration: none;
   padding: 7px;
   font-size: 20px;
   font-weight: bold;
-  border-bottom: 1px dashed black;
-  transition: 400ms;
-  -webkit-transition: 400ms;
-  -o-transition: 400ms;
-  -moz-transition: 400ms;
+  border-bottom: 1px ridge rgb(180, 5, 180);
 }
 #main #menu a:last-child {
   border: none;
 }
 #main #menu a:hover {
-  background: black;
-  color: magenta;
-  font-weight: normal;
+  background: rgb(44, 7, 44);
+  color: rgb(224, 4, 224);
 }
-#main main {
-  width: 83%;
-}
-@media screen and (max-width: 600px) {
-  #main #menu {
+@media only screen and (max-width: 600px) {
+  #main #menu a {
     display: none;
   }
-  #main main {
-    width: 100% !important;
-  }
 }
-#main main h1 {
+#main #menu main {
+  width: 83%;
+}
+#main #menu main h1 {
   text-align: center;
   font-size: 40px;
-  color: black;
-  text-shadow: 0 3px 30px magenta, 3px 0 30px magenta, -3px 0 30px magenta, 0 -3px 30px magenta;
+  color: rgb(44, 7, 44);
+  text-shadow: 0 3px 30px rgb(224, 4, 224), 3px 0 30px rgb(224, 4, 224), -3px 0 30px rgb(224, 4, 224), 0 -3px 30px rgb(224, 4, 224);
 }
-#main main #img-contain {
+#main #menu main #img-contain {
   display: grid;
+  display: -moz-grid;
   grid-template-columns: auto;
   justify-content: space-around;
 }
-#main main #img-contain .img-card {
+#main #menu main #img-contain .img-card {
   margin: 0 5px 25px;
-  border: 1px solid black;
+  border: 1px ridge rgb(180, 5, 180);
   text-align: center;
-  transition: 500ms;
-  -webkit-transition: 500ms;
-  -o-transition: 500ms;
-  -moz-transition: 500ms;
-  background-color: black;
+  background-color: rgb(44, 7, 44);
   box-shadow: 0 4px 8px 1px rgba(255, 0, 255, 0.199), 0 6px 20px 1px rgba(255, 0, 255, 0.19);
 }
-#main main #img-contain .img-card img {
+#main #menu main #img-contain .img-card img {
   max-width: 300px;
   height: auto;
 }
-#main main #img-contain .img-card article {
-  padding: 0 5px 5px;
-  color: magenta;
+@media only screen and (min-width: 992px) {
+  #main #menu main #img-contain .img-card img {
+    height: 250px;
+  }
 }
-#main main #img-contain .img-card:hover {
+@media only screen and (max-width: 353px) {
+  #main #menu main #img-contain .img-card img {
+    width: 100%;
+    height: auto;
+  }
+}
+#main #menu main #img-contain .img-card article {
+  padding: 0 5px 5px;
+  color: rgb(224, 4, 224);
+}
+#main #menu main #img-contain .img-card:hover {
   border-color: purple;
   cursor: pointer;
   box-shadow: 0 4px 30px 20px rgb(255, 0, 255), 0 6px 40px 20px rgb(255, 0, 255);
 }
-@media screen and (min-width: 992px) {
-  #main #img-contain {
+@media only screen and (min-width: 992px) {
+  #main #menu main #img-contain {
     grid-template-columns: auto auto !important;
   }
-  #main #img-contain .img-card img {
-    height: 250px !important;
-  }
 }
-@media screen and (max-width: 353px) {
-  #main main h1 ~ #img-contain img {
-    width: 100%;
-    height: auto;
+@media only screen and (max-width: 600px) {
+  #main #menu main {
+    width: 100% !important;
   }
 }
 
@@ -333,9 +376,11 @@ footer {
   position: relative;
   z-index: 5;
   padding: 7px;
-  border-top: 1px dashed black;
+  border-top: 1px dashed rgb(44, 7, 44);
   display: flex;
-  flex-flow: row wrap;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 footer section {
   width: 100%;
@@ -346,19 +391,15 @@ footer section {
 }
 footer section a {
   text-decoration: none;
-  color: black;
-  transition: 300ms;
-  -webkit-transition: 300ms;
-  -o-transition: 300ms;
-  -moz-transition: 300ms;
+  color: rgb(44, 7, 44);
 }
 footer section a:hover {
   text-decoration: underline;
-  color: magenta;
+  color: rgb(224, 4, 224);
   text-shadow: -1px 0 5px black, 0 1px 5px black, 1px 0 5px black, 0 -1px 5px black;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
   footer section {
     width: 50%;
     text-align: left;
@@ -386,4 +427,4 @@ footer section a:hover {
     box-shadow: 0 -1px 20px 5px rgb(255, 0, 255), 0 -1px 20px 5px rgb(255, 0, 255);
   }
 }
-/*----------- footer end -----------*//*# sourceMappingURL=shop.css.map */
+/*----------- footer end -----------*//*# sourceMappingURL=shop1.css.map */

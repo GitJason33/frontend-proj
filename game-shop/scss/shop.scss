@@ -1,0 +1,381 @@
+@import "config", "vendors", "vars";
+
+svg {
+  height: 24px;
+  width: 24px;
+  stroke-width: 2px;
+}
+svg:not(#home svg){
+  @include transform(translateY(2px));
+}
+header, footer, #menu{
+  background-color: $mainCol1;
+}
+// transition effects only where needed
+nav section, #menu, .img-card div, 
+section[class^="social-"]{
+  @include transition(400ms);
+}
+/*------------------- HEADER -------------------*/
+header{
+  @include flex($dir: column);
+  justify-content: space-around;
+  border-bottom: $bord;
+
+  #logo img{
+    max-width: 150px;
+    height: auto;
+  }
+
+  #account{
+    @include flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include media($bigPhone){
+      width: 50%;
+    }
+  }
+  button.acct{
+    all: unset;
+    display: block;
+    @include bord(1px, $c: $mainCol4);
+    border-radius: $bordRad;
+    @include transition(400ms);
+
+    background-color: $darkCol;
+    color: $mainCol3;
+    cursor: pointer;
+    padding: $pad * 1.5;
+
+    font: {
+      family: $fontTitle;
+      weight: 600;
+    }
+    flex-grow: 1;
+    text-align: center;
+    margin: calc($pad / 2.25);
+
+    &:hover{
+      @include bord(1px, $c: $mainCol4);
+      background-color: $mainCol3;
+      color: $darkCol;
+    }
+  }
+  @include media($bigPhone){
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+/*------------------- HEADER -------------------*/
+
+/*------------------- NAVIGATION BAR -------------------*/ 
+nav, #left, #home, #right{ 
+  @include flex(nowrap); 
+  @include perfect_center;
+}
+nav{
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  z-index: 4;
+  color: $mainCol2;
+  background-color: $darkCol;
+  border-bottom: $bord;
+  box-shadow: 0 1px 3px $mainCol3;
+
+  #left, #right{ 
+    height: 50px;
+  }
+  section[id]{
+    @include perfect_center;
+    height: 100%;
+    cursor: pointer;
+    padding: $pad * 2;
+    align-items: center;
+    
+    &:hover{
+      color: $darkCol;
+      background-color: $mainCol3;
+    }
+  }
+  #home{
+    font: {
+      size: 20px;
+      weight: bold;
+    }
+    aside{
+      display: none;
+      @include media($phone){
+        display: block;
+      }
+    }
+  }
+  #right{
+    justify-content: right;
+    @include media($tablet){
+      width: 80%;
+    }
+  }
+  // input field SEARCH BAR ------------------
+  #search{
+    flex-grow: 3;
+    padding: 0 $pad*2;
+    position: relative;
+
+    input{
+      all: unset; 
+      display: none;
+      height: 80%;
+      border-radius: $bordRad;
+      background-color: $mainCol2;
+      color: $darkCol;
+      padding-left: 30px;
+      width: 100%;
+      border: $bord;
+
+      font: {
+        size: 20px;
+        weight: 900;
+      }
+      cursor: text;
+      @include media($tablet){
+        display: block;
+      }
+      &:focus{
+        border-color: $darkCol;
+      }
+    }
+    svg{
+      z-index: 4;
+      left: 18px;
+      @include media($tablet){
+        position: absolute;
+        color: $darkCol;
+        @include transform(translateY(0px));
+      }
+    }
+    @include media($tablet){
+      width: 82%;
+    }
+  }
+}
+/*------------------- NAVIGATION BAR -------------------*/ 
+
+/*------------ luffy & bros photo ------------*/
+#bg-image{
+  background-image: url("../media/images/luffy.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: calc(150vw - 27px);
+  
+  @include media("min-width: 685px"){
+    background-size: cover;
+  }
+  
+  @include media($tablet){
+    background-image: url("../media/images/3-bros.jpg");
+    background-size: contain;
+    height: calc(50vw - 8px);
+  }
+  section[class]{
+    height: 100%;
+    text-align: center;
+    @include perfect_center;
+
+    color: $mainCol4;
+    background: rgba(0,0,0,0.6);
+    font: {
+      family: $fontTitle;
+      size: 14vw;
+    } 
+    @include media($tablet){
+      font-size: 10vw;
+    }
+  }
+}
+/*---------------- CONTEXT MENU ----------------*/
+#main{
+  @include media($laptop){
+    @include flex($w: nowrap);
+    align-items: normal;
+  }
+}
+#menu{
+  flex-shrink: 0;
+  width: 250px;
+  font-family: $fontTitle;
+  position: relative;
+  z-index: 2;
+
+  display: none;
+  @include media($laptop){
+    display: block;
+  }
+
+  // title
+  h2{
+    color: $darkCol;
+    font-size: 28px; 
+    text-align: center;
+    border-bottom: 2px dashed $darkCol;
+    margin: 0;
+    padding: 20px 0 15px;
+  }
+  // links
+  a{
+    @include transition(400ms);
+    display: block;
+    padding: $pad $pad*2;
+    font-size: 22px;
+
+    &:not(a:last-child){
+      border-bottom: 1px dashed $darkCol;
+    }
+    &:hover{
+      color: $mainCol3;
+      background-color: $darkCol;
+    }
+  }
+}
+/*---------------- CONTEXT MENU END ----------------*/
+
+/*---------------- CATALOG -----------------*/
+#main-content{
+  text-align: center;
+  @include media($laptop){
+    width: 75%;
+  }
+  
+  // title
+  h1{
+    color: $darkCol;
+    padding: 46.9px 0;
+    margin: 0;
+    font: {
+      family: $fontTitle;
+      size: 70px;
+    }
+  }
+  #img-contain{
+    @include grid;
+    grid-template-columns: auto;
+    justify-content: space-around;
+    
+    @include media($tablet){
+      grid-template-columns: auto auto;
+    }
+  }
+  // image
+  .img-card{
+    margin: $marg;
+    width: 90vw;
+    @include media($bigPhone){
+      width: 75vw;
+    }
+    @include media($tablet){
+      width: 300px;
+    }
+
+    div{
+      border: 2px ridge $mainCol1;
+      border-radius: $bordRad;
+      overflow: hidden;
+
+      img{
+        width: 100%;
+        height: auto;
+        @include media($tablet){
+          height: 250px;
+        }
+      }
+      article{
+        padding: $pad;
+        color: $mainCol3;
+        font: {
+          size: 20px; 
+          weight: bold;
+        }
+      }
+      &:hover{
+        border-color: $mainCol1;
+        cursor: pointer;
+        box-shadow:
+          0 4px 30px 20px rgba(255, 0, 255),
+          0 6px 40px 20px rgba(255, 0, 255);
+      }
+    }
+  }
+}
+/*---------------- CATALOG END -----------------*/
+
+/*---------------- FOOTER ----------------*/
+footer{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: $pad*1.5;
+  font: {
+    weight: bold;
+    size: 22px;
+  }
+  border-top: 1px ridge $darkCol;
+  box-shadow: 
+    0 -1px 20px 5px rgba(255, 0, 255),
+    0 -1px 20px 5px rgba(255, 0, 255);
+  @include media($laptop){
+    box-shadow: none;
+  }
+
+  // responsive footer + extra effect on tablets and phones
+  @include media($small){
+    font-size: 16px;
+  }
+  @include media($bigPhone){
+    @include grid;
+    grid-template-columns: auto auto;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  // svg responsive
+  svg{
+    @include media($small){
+      height: 16px;
+      width: 16px;
+    }
+    @include media($tablet){
+      height: 30px;
+      width: 30px;
+    }
+  }
+  
+  #copyright {
+    order: 1;
+  }
+  .social-whatsapp {
+    order: 2;
+  }
+  #locate {
+    order: 3;
+  }
+  .social-instagram {
+    order: 4;
+  }
+  @include media($tablet){
+    font-size: 30px;
+  }
+  section a {
+    width: 100%;
+    @include transition(100ms);
+
+    &:hover{
+      text-decoration: underline;
+      color: $mainCol3;
+      text-shadow: -1px 0 5px black, 0 1px 5px black, 1px 0 5px black,
+      0 -1px 5px black;
+    }
+  }
+}
+
+/*---------------- FOOTER END ----------------*/

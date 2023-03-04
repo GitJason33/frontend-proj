@@ -1,0 +1,18 @@
+@import "vendors", "vars";
+ 
+*{ @include box-size; }
+
+::selection{
+  background: $mainCol5;
+  color: $darkCol;
+}
+body{
+  overflow-x: hidden;
+  background-color: $darkCol;
+  margin: 0;
+  font-family: $fontText;
+}
+a{
+  text-decoration: none;
+  color: unset;
+}
