@@ -1,21 +1,32 @@
-@import "vars";
-@import "vendors";
+@import "config";
 
+label, .h8t{
+  @include transition(500ms);
+}
 // animation box
 #anime{
-  width: 50%;
+  width: 98%;
   height: 500px;
   margin: $marg auto;
   border-radius: $bordRad;
-
-  // align center
+  font-family: $fontTitle;
   padding: 2px;
-
-  background-color: $mainCol1;
+  background-color: transparent;
   position: relative;
 
   // hide out rotation
   overflow: hidden;
+
+  // responsiveness
+  @include media($bigPhone){
+    width: 85%;
+  }
+  @include media($tablet){
+    width: 70%;
+  }
+  @include media($laptop){
+    width: 50%;
+  }
 
   #infos{
     z-index: 1;
@@ -23,106 +34,110 @@
     width: 100%;
     height: 100%;
     background: $darkCol;
-    border-radius: 1rem;
+    border-radius: $bordRad;
     color: gray;
-    padding: 10px;
 
     h1{
       margin: 0;
       padding: 10px 10px 40px;
-      color: $mainCol1;
+      color: $darkCol;
       text-align: center;
-      font-family: $fontTitle;
-    }menu
+    }
     .form1{
-      text-align: center;
+
       section{
         margin-bottom: 40px;
         position: relative;
       }
-
       input{
         all: unset;
-        color:$darkCol;
+        color: $darkCol;
         background-color: transparent;
-        width: 70%;
+        width: 95%;
         padding: 10px;
         text-align: left;
         position: relative;
         z-index: 2;
-        @include transition(500ms);
-        font-family: $fontText;
-
+        font: {
+          family: $fontText;
+          weight: bold; 
+        }
+        @include media($bigPhone){
+          width: 70%;
+          left: 15%;
+        }
       }
       label{
         z-index: 1;
         position: absolute;
         padding: 10px;
-        left: 15%;
-        font-family: Audiowide, cursive;
-        @include transition(500ms);
+        left: 2.5%;
+        @include transform(translateY(-41px));
+        @include media($spBreak1){
+          @include transform(none);
+        }
+        @include media($bigPhone){
+          left: 16.5%;
+        }
       }
-      // megenta background
+      // background animation
       .h8t{
         background: $mainCol3;
         height: 1px;
-        width: 70%;
-        border-radius: 0.75rem;
+        width: 98%;
+        border-radius: $bordRad;
         position: absolute;
-        @include transition(500ms);
+        left: 1%;
 
-        // align center
-        @include transform(translateX(20%));
+        @include media($bigPhone){
+          left: 15%;
+          width: 70%;
+        }
       }
       
       // transitions
-      input:focus ~ label, input:valid ~ label{
-        @include transform(translate(-15px, -28px));
+      input:focus ~ label, 
+      input:valid ~ label{
+        @include transform(translate(-15px, -66px));
         font-size: 13px;
+
+        @include media($spBreak1){
+          @include transform(translate(-15px, -28px));
+        }
       }
-      input:focus ~ label ~ .h8t, input:valid ~ label ~ .h8t{
+      input:focus ~ label ~ .h8t,
+      input:valid ~ label ~ .h8t{
         height: 38px;
-        @include transform(translate(20%,-38px));
+        @include transform(translateY(-38px));
       }
 
       // responsive positioning ---------------
-      @media only screen and (max-width: 450px){
-        input{
-          width: 99%; 
-          padding: 10px 0;
-        }
-        label{ left: 0; }
-        .h8t{ 
-          width: 100%;
-          @include transform(translateX(0));
-        }
-        input:focus ~ label ~ .h8t, input:valid ~ label ~ .h8t{
-          @include transform(translateY(-38px));
-        }
-        input:focus ~ label, input:valid ~ label{
-          @include transform(translate(-8px, -28px));
-          font-size: 10px;
-        }
-      }
-      @media only screen and (max-width: 350px){
-        input, label{ font-size: 13px; }
-        
-      }
+      // @media only screen and (max-width: 450px){
+      //   input{
+      //     width: 99%; 
+      //     padding: 10px 0;
+      //   }
+      //   label{ left: 0; }
+      //   .h8t{ 
+      //     width: 100%;
+      //     @include transform(translateX(0));
+      //   }
+      //   input:focus ~ label ~ .h8t, input:valid ~ label ~ .h8t{
+      //     @include transform(translateY(-38px));
+      //   }
+      //   input:focus ~ label, input:valid ~ label{
+      //     @include transform(translate(-8px, -28px));
+      //     font-size: 10px;
+      //   }
+      // }
       // buttons -------------------
       #buttons{
-        display: flex;
+        @include flex;
         justify-content: space-around;
         width: 100%;
 
         .acct{
-          flex-grow: 0;
           padding: 10px;
-        }
-        @media screen and (max-width: 300px){
-          .acct{
-            flex-grow: 1;
-            margin-bottom: 10px;
-          }
         }
       }
     }
@@ -154,6 +169,8 @@
 #anime::after{
   content: "";
   position: absolute;
+  
+  // position it relatively until the side touch the center of the main container
   top: 50%;
   left: 50%;
   width: 100%;
@@ -172,19 +189,8 @@
     to{ @include transform(rotate(360deg)); }
   }
 }
-@media only screen and (max-width: 992px){
-  #anime{
-    width: 75%;
-  }
-}
-@media only screen and (max-width: 600px){
-  #anime{
-    width: 97%;
-  }
-}
-@media only screen and (max-width: 235px){
-  #anime{
-    height: fit-content;
-  }
-  #buttons{ margin-bottom: 0 !important; }
+footer{
+  box-shadow: 
+    0 -1px 20px 5px rgba(255, 0, 255),
+    0 -1px 20px 5px rgba(255, 0, 255);
 }

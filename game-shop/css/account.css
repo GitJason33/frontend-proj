@@ -1,12 +1,63 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: rgb(253, 123, 253);
+  color: rgb(44, 7, 44);
+}
+
+::selection {
+  background: rgb(253, 123, 253);
+  color: rgb(44, 7, 44);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(44, 7, 44);
+  margin: 0;
+  font-family: Garamond, serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+label, .h8t {
+  transition: 500ms;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  -moz-transition: 500ms;
+}
+
 #anime {
-  width: 50%;
+  width: 98%;
   height: 500px;
   margin: 25px auto;
   border-radius: 8px;
+  font-family: Audiowide, "Lucida Handwriting", cursive;
   padding: 2px;
-  background-color: purple;
+  background-color: transparent;
   position: relative;
   overflow: hidden;
+}
+@media only screen and (min-width: 500px) {
+  #anime {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #anime {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #anime {
+    width: 50%;
+  }
 }
 #anime #infos {
   z-index: 1;
@@ -14,133 +65,114 @@
   width: 100%;
   height: 100%;
   background: rgb(44, 7, 44);
-  border-radius: 1rem;
+  border-radius: 8px;
   color: gray;
-  padding: 10px;
 }
 #anime #infos h1 {
   margin: 0;
   padding: 10px 10px 40px;
-  color: purple;
-  text-align: center;
-  font-family: Audiowide, "Lucida Handwriting", cursive;
-}
-#anime #infos menu .form1 {
+  color: rgb(44, 7, 44);
   text-align: center;
 }
-#anime #infos menu .form1 section {
+#anime #infos .form1 section {
   margin-bottom: 40px;
   position: relative;
 }
-#anime #infos menu .form1 input {
+#anime #infos .form1 input {
   all: unset;
   color: rgb(44, 7, 44);
   background-color: transparent;
-  width: 70%;
+  width: 95%;
   padding: 10px;
   text-align: left;
   position: relative;
   z-index: 2;
-  transition: 500ms;
-  -webkit-transition: 500ms;
-  -o-transition: 500ms;
-  -moz-transition: 500ms;
   font-family: Garamond, serif;
+  font-weight: bold;
 }
-#anime #infos menu .form1 label {
+@media only screen and (min-width: 500px) {
+  #anime #infos .form1 input {
+    width: 70%;
+    left: 15%;
+  }
+}
+#anime #infos .form1 label {
   z-index: 1;
   position: absolute;
   padding: 10px;
-  left: 15%;
-  font-family: Audiowide, cursive;
-  transition: 500ms;
-  -webkit-transition: 500ms;
-  -o-transition: 500ms;
-  -moz-transition: 500ms;
+  left: 2.5%;
+  transform: translateY(-41px);
+  -o-transform: translateY(-41px);
+  -webkit-transform: translateY(-41px);
+  -moz-transform: translateY(-41px);
+  -ms-transform: translateY(-41px);
 }
-#anime #infos menu .form1 .h8t {
+@media only screen and (min-width: 427px) {
+  #anime #infos .form1 label {
+    transform: none;
+    -o-transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+  }
+}
+@media only screen and (min-width: 500px) {
+  #anime #infos .form1 label {
+    left: 16.5%;
+  }
+}
+#anime #infos .form1 .h8t {
   background: rgb(224, 4, 224);
   height: 1px;
-  width: 70%;
-  border-radius: 0.75rem;
+  width: 98%;
+  border-radius: 8px;
   position: absolute;
-  transition: 500ms;
-  -webkit-transition: 500ms;
-  -o-transition: 500ms;
-  -moz-transition: 500ms;
-  transform: translateX(20%);
-  -o-transform: translateX(20%);
-  -webkit-transform: translateX(20%);
-  -moz-transform: translateX(20%);
-  -ms-transform: translateX(20%);
+  left: 1%;
 }
-#anime #infos menu .form1 input:focus ~ label, #anime #infos menu .form1 input:valid ~ label {
-  transform: translate(-15px, -28px);
-  -o-transform: translate(-15px, -28px);
-  -webkit-transform: translate(-15px, -28px);
-  -moz-transform: translate(-15px, -28px);
-  -ms-transform: translate(-15px, -28px);
+@media only screen and (min-width: 500px) {
+  #anime #infos .form1 .h8t {
+    left: 15%;
+    width: 70%;
+  }
+}
+#anime #infos .form1 input:focus ~ label,
+#anime #infos .form1 input:valid ~ label {
+  transform: translate(-15px, -66px);
+  -o-transform: translate(-15px, -66px);
+  -webkit-transform: translate(-15px, -66px);
+  -moz-transform: translate(-15px, -66px);
+  -ms-transform: translate(-15px, -66px);
   font-size: 13px;
 }
-#anime #infos menu .form1 input:focus ~ label ~ .h8t, #anime #infos menu .form1 input:valid ~ label ~ .h8t {
+@media only screen and (min-width: 427px) {
+  #anime #infos .form1 input:focus ~ label,
+  #anime #infos .form1 input:valid ~ label {
+    transform: translate(-15px, -28px);
+    -o-transform: translate(-15px, -28px);
+    -webkit-transform: translate(-15px, -28px);
+    -moz-transform: translate(-15px, -28px);
+    -ms-transform: translate(-15px, -28px);
+  }
+}
+#anime #infos .form1 input:focus ~ label ~ .h8t,
+#anime #infos .form1 input:valid ~ label ~ .h8t {
   height: 38px;
-  transform: translate(20%, -38px);
-  -o-transform: translate(20%, -38px);
-  -webkit-transform: translate(20%, -38px);
-  -moz-transform: translate(20%, -38px);
-  -ms-transform: translate(20%, -38px);
+  transform: translateY(-38px);
+  -o-transform: translateY(-38px);
+  -webkit-transform: translateY(-38px);
+  -moz-transform: translateY(-38px);
+  -ms-transform: translateY(-38px);
 }
-@media only screen and (max-width: 450px) {
-  #anime #infos menu .form1 input {
-    width: 99%;
-    padding: 10px 0;
-  }
-  #anime #infos menu .form1 label {
-    left: 0;
-  }
-  #anime #infos menu .form1 .h8t {
-    width: 100%;
-    transform: translateX(0);
-    -o-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-  }
-  #anime #infos menu .form1 input:focus ~ label ~ .h8t, #anime #infos menu .form1 input:valid ~ label ~ .h8t {
-    transform: translateY(-38px);
-    -o-transform: translateY(-38px);
-    -webkit-transform: translateY(-38px);
-    -moz-transform: translateY(-38px);
-    -ms-transform: translateY(-38px);
-  }
-  #anime #infos menu .form1 input:focus ~ label, #anime #infos menu .form1 input:valid ~ label {
-    transform: translate(-8px, -28px);
-    -o-transform: translate(-8px, -28px);
-    -webkit-transform: translate(-8px, -28px);
-    -moz-transform: translate(-8px, -28px);
-    -ms-transform: translate(-8px, -28px);
-    font-size: 10px;
-  }
-}
-@media only screen and (max-width: 350px) {
-  #anime #infos menu .form1 input, #anime #infos menu .form1 label {
-    font-size: 13px;
-  }
-}
-#anime #infos menu .form1 #buttons {
+#anime #infos .form1 #buttons {
   display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
   justify-content: space-around;
   width: 100%;
 }
-#anime #infos menu .form1 #buttons .acct {
-  flex-grow: 0;
+#anime #infos .form1 #buttons .acct {
   padding: 10px;
-}
-@media screen and (max-width: 300px) {
-  #anime #infos menu .form1 #buttons .acct {
-    flex-grow: 1;
-    margin-bottom: 10px;
-  }
 }
 
 #anime::before {
@@ -205,22 +237,6 @@
   }
 }
 
-@media only screen and (max-width: 992px) {
-  #anime {
-    width: 75%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  #anime {
-    width: 97%;
-  }
-}
-@media only screen and (max-width: 235px) {
-  #anime {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-  #buttons {
-    margin-bottom: 0 !important;
-  }
+footer {
+  box-shadow: 0 -1px 20px 5px rgb(255, 0, 255), 0 -1px 20px 5px rgb(255, 0, 255);
 }/*# sourceMappingURL=account.css.map */

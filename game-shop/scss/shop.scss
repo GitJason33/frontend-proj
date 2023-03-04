@@ -1,4 +1,4 @@
-@import "config", "vendors", "vars";
+@import "config";
 
 svg {
   height: 24px;
@@ -36,35 +36,35 @@ header{
       width: 50%;
     }
   }
-  button.acct{
-    all: unset;
-    display: block;
-    @include bord(1px, $c: $mainCol4);
-    border-radius: $bordRad;
-    @include transition(400ms);
-
-    background-color: $darkCol;
-    color: $mainCol3;
-    cursor: pointer;
-    padding: $pad * 1.5;
-
-    font: {
-      family: $fontTitle;
-      weight: 600;
-    }
-    flex-grow: 1;
-    text-align: center;
-    margin: calc($pad / 2.25);
-
-    &:hover{
-      @include bord(1px, $c: $mainCol4);
-      background-color: $mainCol3;
-      color: $darkCol;
-    }
-  }
   @include media($bigPhone){
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+button.acct{
+  all: unset;
+  display: block;
+  @include bord(1px, $c: $mainCol4);
+  border-radius: $bordRad;
+  @include transition(400ms);
+
+  background-color: $darkCol;
+  color: $mainCol3;
+  cursor: pointer;
+  padding: $pad * 1.5;
+
+  font: {
+    family: $fontTitle;
+    weight: 600;
+  }
+  flex-grow: 1;
+  text-align: center;
+  margin: calc($pad / 2.25);
+
+  &:hover{
+    @include bord(1px, $c: $mainCol4);
+    background-color: $mainCol3;
+    color: $darkCol;
   }
 }
 /*------------------- HEADER -------------------*/
@@ -326,6 +326,8 @@ footer{
     size: 22px;
   }
   border-top: 1px ridge $darkCol;
+
+  // extra effect for tablets and phones
   box-shadow: 
     0 -1px 20px 5px rgba(255, 0, 255),
     0 -1px 20px 5px rgba(255, 0, 255);
@@ -333,7 +335,7 @@ footer{
     box-shadow: none;
   }
 
-  // responsive footer + extra effect on tablets and phones
+  // responsive footer 
   @include media($small){
     font-size: 16px;
   }

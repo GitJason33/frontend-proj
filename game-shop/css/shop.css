@@ -78,7 +78,14 @@ header #account {
     width: 50%;
   }
 }
-header button.acct {
+@media only screen and (min-width: 500px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+button.acct {
   all: unset;
   display: block;
   border-width: 1px;
@@ -99,18 +106,12 @@ header button.acct {
   text-align: center;
   margin: 3.1111111111px;
 }
-header button.acct:hover {
+button.acct:hover {
   border-width: 1px;
   border-style: ridge;
   border-color: rgb(253, 46, 253);
   background-color: rgb(224, 4, 224);
   color: rgb(44, 7, 44);
-}
-@media only screen and (min-width: 500px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 }
 
 /*------------------- HEADER -------------------*/
