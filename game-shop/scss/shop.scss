@@ -254,7 +254,13 @@ nav{
     margin: 0;
     font: {
       family: $fontTitle;
-      size: 70px;
+      size: 55px;
+    }
+    @include media($small){
+      font-size: 40px;
+    }
+    @include media($bigPhone){
+      font-size: 70px;
     }
   }
   #img-contain{
@@ -377,5 +383,4 @@ footer{
     }
   }
 }
-
 /*---------------- FOOTER END ----------------*/

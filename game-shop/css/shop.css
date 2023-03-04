@@ -329,7 +329,17 @@ nav #search svg {
   padding: 46.9px 0;
   margin: 0;
   font-family: Audiowide, "Lucida Handwriting", cursive;
-  font-size: 70px;
+  font-size: 55px;
+}
+@media only screen and (max-width: 300px) {
+  #main-content h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  #main-content h1 {
+    font-size: 70px;
+  }
 }
 #main-content #img-contain {
   display: grid;
