@@ -7,9 +7,12 @@
 .goToCheckout{
   @include buttonStyle;
   position: absolute;
-  left: 1%;
+  left: 1.5%;
   width: auto;
 
+  @include media($bigPhone){
+    left: 3px;
+  }
   writing-mode: vertical-lr;
   @include transform(rotate(180deg));
 
@@ -21,21 +24,22 @@
 
 // item's card --------------------------
 #cart-items{
-  @include perfect_center;
-  flex-wrap: wrap;
+  padding: $marg 0;
+  @include flex;
+  justify-content: space-around;
+  align-content: space-around;
 }
 .item{
   color: $mainCol3;
   @include bord(2px);
   width: 97%;
-  margin-bottom: $marg;
+  margin: 0 0 $marg;
+  @include media($bigPhone){
+    margin: 0 $marg $marg;
+  }
   overflow: hidden;
   border-radius: $bordRad;
 
-  @include media($phone){
-    width: 85%;
-    margin: $marg;
-  }
   @include media($bigPhone){
     width: 350px;
   }
@@ -117,9 +121,107 @@
       text-align: right;
       flex-grow: 1;
     }
-
   }
 }
+#checkout{
+  @include bord(2px);
+  width: 97%;
+  margin: 0 auto $marg;
+  border-radius: $bordRad;
+  
+  // h1 is checkout title and h2 is order
+  h1, h2{ 
+    text-align: center; 
+    margin: 0;
+   
+    font: {
+      family: $fontTitle;
+      size: 13vw;
+    } 
+    color: $mainCol2;
+    @include media($bigPhone){
+      font-size: 60px;
+    }
+  }
+  h1{
+    border-bottom: 2px dashed $mainCol2;
+    padding: 30px 0;
+  } 
+  #contain-checkout-info{
+    padding: 2*$pad;
+  }
+  article{
+    &:not(&:last-child){
+      margin-bottom: 3*$pad;
+    }
+    @include flex;
+    justify-content: space-between;
+
+    .labels, .price{
+      font: {
+        size: 24px;
+        weight: bold;
+      }
+    }
+    .labels{ 
+      color: $mainCol2; 
+      @include media($small){
+        font-size: 16px;
+      }
+    }
+    .price{ color: $mainCol3; }
+  }
+
+
+  h2{
+    @include transition(300ms);
+    border-top: 2px ridge $mainCol2; 
+    padding: 15px 0;
+    cursor: pointer;
+
+    &:hover{
+      color: $darkCol;
+      background-color: $mainCol2;
+    }
+  }
+  .right{
+    text-align: right;
+    @include flex(nowrap);
+    justify-content: end;
+    width: 100%;
+
+    input, select{
+      display: block;
+      width: 100%;
+      padding: $pad;
+      border-radius: $bordRad;
+      color: $darkCol;
+      background-color: $mainCol3;
+      font-size: 20px;
+      border: 1px ridge $mainCol1;
+
+      @include media($tablet){
+        font: { 
+          size: 30px; 
+          weight: bold;
+        }
+      }
+      @include media($small){
+        font-size: 16px;
+      }
+
+      &:focus{
+        box-shadow: 0 1px 10px $mainCol3, 0 -1px 10px $mainCol3, 1px 0 10px $mainCol3, -1px 0 10px $mainCol3;
+      }
+    }
+    ::placeholder{
+      color: #535252;
+      font-weight: normal;
+    }
+    
+  }
+}
+
 // item's card end--------------------------
 footer{
   box-shadow: 

@@ -7,6 +7,7 @@
   <title>Cart</title>
 
   <!-- css -->
+  <link rel="stylesheet" href="./css/shop.css"/>
   <link rel="stylesheet" href="./css/cart.css" />
 </head>
 <body onload="load()">
@@ -146,7 +147,50 @@
     </section>
   </div>
 
-  <section id="checkout"></section>
+  <form>
+    <section id="checkout">
+      <h1>CHECKOUT</h1>
+      <div id="contain-checkout-info">
+        <article>
+          <div class="labels">SubTotal: </div>
+          <div class="price right">43.97$</div>
+        </article>
+
+        <article>
+          <div class="labels">Country of residence: </div>
+          <div class="percent right">
+            <select name="country" id="countryOptions">
+              <option value="Lebanon">Lebanon</option>
+              <option value="USA">United States</option>
+              <option value="UAE">United Arab Emirates</option>
+            </select>
+          </div>
+        </article>
+
+        <article>
+          <div class="labels">Email: </div>
+          <div class="percent right">
+            <input type="email" placeholder="example@email.com"/>
+          </div>
+        </article>
+
+        <article>
+          <div class="labels">Coupon code: </div>
+          <div class="coupon right">
+            <input maxlength="8" placeholder="XXXX-XXXX"/>
+            <button>ENTER</button>
+          </div>
+        </article>
+      
+        <article>
+          <div class="labels">GrandTotal: </div>
+          <div id="grandTotal" class="price right">43.97$</div>
+        </article>
+      </div>
+      <h2>ORDER</h2>
+    </section>
+  </form>
+
   <footer></footer>
 
   <script src="js/main.js"></script>

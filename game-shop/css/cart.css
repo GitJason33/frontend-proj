@@ -46,7 +46,7 @@ a {
   font-weight: 600;
   text-align: center;
   position: absolute;
-  left: 1%;
+  left: 1.5%;
   width: auto;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
@@ -59,19 +59,24 @@ a {
   background-color: rgb(224, 4, 224);
   color: rgb(44, 7, 44);
 }
+@media only screen and (min-width: 500px) {
+  .goToCheckout {
+    left: 3px;
+  }
+}
 .goToCheckout a {
   display: block;
   padding: 10.5px;
 }
 
 #cart-items {
+  padding: 25px 0;
   display: flex;
   display: -webkit-flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
 }
 
 .item {
@@ -80,15 +85,14 @@ a {
   border-style: ridge;
   border-color: rgb(180, 5, 180);
   width: 97%;
-  margin-bottom: 25px;
+  margin: 0 0 25px;
   overflow: hidden;
   border-radius: 8px;
   /*--- REMOVE BUTTON ---*/
 }
-@media only screen and (min-width: 301px) {
+@media only screen and (min-width: 500px) {
   .item {
-    width: 85%;
-    margin: 25px;
+    margin: 0 25px 25px;
   }
 }
 @media only screen and (min-width: 500px) {
@@ -180,6 +184,113 @@ a {
 .item article[class] div:not(.labels, .quanDesign div) {
   text-align: right;
   flex-grow: 1;
+}
+
+#checkout {
+  border-width: 2px;
+  border-style: ridge;
+  border-color: rgb(180, 5, 180);
+  width: 97%;
+  margin: 0 auto 25px;
+  border-radius: 8px;
+}
+#checkout h1, #checkout h2 {
+  text-align: center;
+  margin: 0;
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+  font-size: 13vw;
+  color: rgb(180, 5, 180);
+}
+@media only screen and (min-width: 500px) {
+  #checkout h1, #checkout h2 {
+    font-size: 60px;
+  }
+}
+#checkout h1 {
+  border-bottom: 2px dashed rgb(180, 5, 180);
+  padding: 30px 0;
+}
+#checkout #contain-checkout-info {
+  padding: 14px;
+}
+#checkout article {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+#checkout article:not(#checkout article:last-child) {
+  margin-bottom: 21px;
+}
+#checkout article .labels, #checkout article .price {
+  font-size: 24px;
+  font-weight: bold;
+}
+#checkout article .labels {
+  color: rgb(180, 5, 180);
+}
+@media only screen and (max-width: 300px) {
+  #checkout article .labels {
+    font-size: 16px;
+  }
+}
+#checkout article .price {
+  color: rgb(224, 4, 224);
+}
+#checkout h2 {
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  -moz-transition: 300ms;
+  border-top: 2px ridge rgb(180, 5, 180);
+  padding: 15px 0;
+  cursor: pointer;
+}
+#checkout h2:hover {
+  color: rgb(44, 7, 44);
+  background-color: rgb(180, 5, 180);
+}
+#checkout .right {
+  text-align: right;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+}
+#checkout .right input, #checkout .right select {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border-radius: 8px;
+  color: rgb(44, 7, 44);
+  background-color: rgb(224, 4, 224);
+  font-size: 20px;
+  border: 1px ridge purple;
+}
+@media only screen and (min-width: 768px) {
+  #checkout .right input, #checkout .right select {
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+@media only screen and (max-width: 300px) {
+  #checkout .right input, #checkout .right select {
+    font-size: 16px;
+  }
+}
+#checkout .right input:focus, #checkout .right select:focus {
+  box-shadow: 0 1px 10px rgb(224, 4, 224), 0 -1px 10px rgb(224, 4, 224), 1px 0 10px rgb(224, 4, 224), -1px 0 10px rgb(224, 4, 224);
+}
+#checkout .right ::-moz-placeholder {
+  color: #535252;
+  font-weight: normal;
+}
+#checkout .right ::placeholder {
+  color: #535252;
+  font-weight: normal;
 }
 
 footer {

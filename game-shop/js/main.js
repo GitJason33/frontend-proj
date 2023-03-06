@@ -9,7 +9,7 @@ const head = document.head;
 
 // main loading
 function load(){
-  addCss();
+  addGoogleFont();
   addIcon();
   createHeader();
   createNavBar();
@@ -24,20 +24,13 @@ function homeLoad(){
 
 
 // common css for main components
-function addCss(){
+function addGoogleFont(){
   let cssFiles = [
-    // the remaining
-    "css/shop.css",
-
     // google fonts
     "https://fonts.googleapis.com/css?family=Audiowide&effect=neon"
   ];
-  _checkLinks(cssFiles);
-
-  for(let i = 0; i < cssFiles.length; i++){
-    head.innerHTML += `
-    <link rel="stylesheet" href="${cssFiles[i]}"/>`;
-  }
+  head.innerHTML += `
+  <link rel="stylesheet" href="${cssFiles[0]}"/>`;
 }
 
 // add icon to the page
