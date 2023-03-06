@@ -110,26 +110,6 @@ label, .h8t{
         height: 38px;
         @include transform(translateY(-38px));
       }
-
-      // responsive positioning ---------------
-      // @media only screen and (max-width: 450px){
-      //   input{
-      //     width: 99%; 
-      //     padding: 10px 0;
-      //   }
-      //   label{ left: 0; }
-      //   .h8t{ 
-      //     width: 100%;
-      //     @include transform(translateX(0));
-      //   }
-      //   input:focus ~ label ~ .h8t, input:valid ~ label ~ .h8t{
-      //     @include transform(translateY(-38px));
-      //   }
-      //   input:focus ~ label, input:valid ~ label{
-      //     @include transform(translate(-8px, -28px));
-      //     font-size: 10px;
-      //   }
-      // }
       // buttons -------------------
       #buttons{
         @include flex;

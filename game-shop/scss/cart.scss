@@ -1,59 +1,128 @@
-@import "vars";
-@import "vendors";
+@import "config";
 
-.labels{
-  margin: 10px 0;
-  @include grid;
-  grid-template-columns: 40% 10% 25% 25%;
-  color: $mainCol3;
-  font-family: $fontTitle;
+// button to quickly go to checkout
+.forCheck{
+  width: 100%;
+}
+.goToCheckout{
+  @include buttonStyle;
+  position: absolute;
+  left: 1%;
+  width: auto;
+
+  writing-mode: vertical-lr;
+  @include transform(rotate(180deg));
+
+  a{
+    display: block;
+    padding: $pad * 1.5;
+  }
 }
 
 // item's card --------------------------
+#cart-items{
+  @include perfect_center;
+  flex-wrap: wrap;
+}
 .item{
-  display: grid;
-  grid-template-columns: 40% 10% 25% 20% 5%;
   color: $mainCol3;
   @include bord(2px);
-  margin: 10px 3px;
+  width: 97%;
+  margin-bottom: $marg;
   overflow: hidden;
   border-radius: $bordRad;
-  margin-bottom: 20px;
 
-  article:not(.image), .image div{
+  @include media($phone){
+    width: 85%;
+    margin: $marg;
+  }
+  @include media($bigPhone){
+    width: 350px;
+  }
+  
+  .labels{
+    font: {
+      size: 20px;
+      weight: bold;
+    }
+  }
+  .price{
+    font: {
+      size: 22px;
+      weight: bold;
+    }
+  }
+  .image img{
+    width: 100%;
+    height: auto;
+    @include media($bigPhone){
+      height: 300px;
+    }
+  }
+  .quantity{
+    @include flex;
+    
+    .quanDesign{
+      @include flex(nowrap);
+      justify-content: end;
+
+      div{
+        padding: 10px 15px;
+        border: 1px solid $mainCol3;
+        height: fit-content;
+      }
+      div:not(div:nth-child(2)){
+        cursor: pointer;
+      }
+      div:first-child{
+        border-radius: $bordRad 0 0 $bordRad;
+      }
+      div:nth-child(2){
+        border-width: 1px 0;
+      }
+      div:last-child{
+        border-radius: 0 $bordRad $bordRad 0;
+      }
+    }
+  }
+  
+  article:not(.image){
     @include perfect_center;
   }
-
-  .image img{
-    max-width: 200px; 
-    float: left;
+  
+  article{
+    padding: 10px 0;
   }
-
-  .quantity{
-    @include flex(nowrap);
-    $radi: 5px;
-
-    div{
-      padding: 10px 15px;
-      border: 1px solid $mainCol3;
-      height: fit-content;
+  /*--- REMOVE BUTTON ---*/
+  #remove{
+    @include transition(300ms);
+    font: {
+      weight: 900;
+      size: 30px;
     }
-    div:not(div:nth-child(2)){
-      cursor: pointer;
-    }
-    div:first-child{
-      border-radius: $radi 0 0 $radi;
-    }
-    div:nth-child(2){
-      border-width: 1px 0;
-    }
-    div:last-child{
-      border-radius: 0 $radi $radi 0;
+    cursor: pointer;
+    
+    &:hover{
+      background: $mainCol3;
+      color: $darkCol;
     }
   }
+  article[class]{
+    @include flex;
+    justify-content: space-between;
+    border-bottom: $bord;
+    padding: 10px;
+  
+    div:not(.labels, .quanDesign div){
+      text-align: right;
+      flex-grow: 1;
+    }
 
-  article[onclick]{
-    font-size: 23px;
   }
 }
 // item's card end--------------------------
+footer{
+  box-shadow: 
+    0 -1px 20px 5px rgba(255, 0, 255),
+    0 -1px 20px 5px rgba(255, 0, 255);
+}

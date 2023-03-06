@@ -5,7 +5,7 @@ svg {
   width: 24px;
   stroke-width: 2px;
 }
-svg:not(#home svg){
+svg:not(#homeTab svg){
   @include transform(translateY(2px));
 }
 header, footer, #menu{
@@ -17,10 +17,15 @@ section[class^="social-"]{
   @include transition(400ms);
 }
 /*------------------- HEADER -------------------*/
-header{
+header[id]{
   @include flex($dir: column);
-  justify-content: space-around;
+  justify-content: center;
   border-bottom: $bord;
+
+  @include media($bigPhone){
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   #logo img{
     max-width: 150px;
@@ -36,41 +41,21 @@ header{
       width: 50%;
     }
   }
-  @include media($bigPhone){
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  
 }
-button.acct{
+.acct{
   all: unset;
   display: block;
-  @include bord(1px, $c: $mainCol4);
-  border-radius: $bordRad;
-  @include transition(400ms);
+  @include buttonStyle;
 
-  background-color: $darkCol;
-  color: $mainCol3;
-  cursor: pointer;
   padding: $pad * 1.5;
-
-  font: {
-    family: $fontTitle;
-    weight: 600;
-  }
   flex-grow: 1;
-  text-align: center;
   margin: calc($pad / 2.25);
-
-  &:hover{
-    @include bord(1px, $c: $mainCol4);
-    background-color: $mainCol3;
-    color: $darkCol;
-  }
 }
 /*------------------- HEADER -------------------*/
 
 /*------------------- NAVIGATION BAR -------------------*/ 
-nav, #left, #home, #right{ 
+nav, #left, #homeTab, #right{ 
   @include flex(nowrap); 
   @include perfect_center;
 }
@@ -99,7 +84,7 @@ nav{
       background-color: $mainCol3;
     }
   }
-  #home{
+  #homeTab{
     font: {
       size: 20px;
       weight: bold;
@@ -180,6 +165,8 @@ nav{
   }
   section[class]{
     height: 100%;
+    position: relative;
+    z-index: 2;
     text-align: center;
     @include perfect_center;
 

@@ -75,3 +75,23 @@
     @content;
   }
 }
+@mixin buttonStyle{
+  @include bord(1px, $c: $mainCol4);
+  border-radius: $bordRad;
+  @include transition(400ms);
+
+  background-color: $darkCol;
+  color: $mainCol3;
+  cursor: pointer;
+
+  font: {
+    family: $fontTitle;
+    weight: 600;
+  }
+  text-align: center;
+
+  &:hover{
+    background-color: $mainCol3;
+    color: $darkCol;
+  }
+}
