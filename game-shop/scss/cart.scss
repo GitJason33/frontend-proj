@@ -129,8 +129,7 @@
   margin: 0 auto $marg;
   border-radius: $bordRad;
   
-  // h1 is checkout title and h2 is order
-  h1, h2{ 
+  @mixin titles(){
     text-align: center; 
     margin: 0;
    
@@ -144,6 +143,7 @@
     }
   }
   h1{
+    @include titles;
     border-bottom: 2px dashed $mainCol2;
     padding: 30px 0;
   } 
@@ -162,18 +162,29 @@
         size: 24px;
         weight: bold;
       }
+      @include media($tablet){
+        font-size: 30px;
+      }
     }
     .labels{ 
       color: $mainCol2; 
       @include media($small){
         font-size: 16px;
       }
+
+      span{ color: red; }
     }
-    .price{ color: $mainCol3; }
+    .price{ 
+      color: $mainCol3; 
+    }
   }
 
+  #submitOrder{
+    all: unset;
+    display: block;
+    width: 100%;
+    @include titles;
 
-  h2{
     @include transition(300ms);
     border-top: 2px ridge $mainCol2; 
     padding: 15px 0;
@@ -209,16 +220,49 @@
       @include media($small){
         font-size: 16px;
       }
-
       &:focus{
         box-shadow: 0 1px 10px $mainCol3, 0 -1px 10px $mainCol3, 1px 0 10px $mainCol3, -1px 0 10px $mainCol3;
       }
     }
-    ::placeholder{
-      color: #535252;
-      font-weight: normal;
-    }
+  }
+  ::placeholder{
+    color: #535252;
+    font-weight: normal;
+  }
+  .coupon input{ border-radius: $bordRad 0 0 $bordRad; }
+  #enterCoupon{
+    all: unset;
+    @include transition(300ms);
+    border: 1px outset $mainCol2;
+    display: block;
+    padding: 0 $pad;
+    color: $mainCol3;
+
+    height: 31px;
+    font-weight: bold;
     
+    @include media($phone){
+      height: 36px;
+      font-size: 20px;
+    }
+    @include media($tablet){
+      height: 47px;
+      font-size: 24px
+    }
+    border-radius: 0 $bordRad $bordRad 0;
+    cursor: pointer;
+
+    &:hover{
+      background: $mainCol3;
+      color: $darkCol;
+    }
+  }
+  #error{
+    color: red;
+    font: {
+      size: 30px;
+      weight: bold;
+    }
   }
 }
 

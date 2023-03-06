@@ -157,8 +157,8 @@
         </article>
 
         <article>
-          <div class="labels">Country of residence: </div>
-          <div class="percent right">
+          <div class="labels"><span>*</span> Country of residence: </div>
+          <div class="country right">
             <select name="country" id="countryOptions">
               <option value="Lebanon">Lebanon</option>
               <option value="USA">United States</option>
@@ -168,26 +168,28 @@
         </article>
 
         <article>
-          <div class="labels">Email: </div>
-          <div class="percent right">
-            <input type="email" placeholder="example@email.com"/>
+          <div class="labels"><span>*</span> Email:</div>
+          <div class="email right">
+            <input type="email" placeholder="example@email.com" required/>
           </div>
         </article>
 
         <article>
-          <div class="labels">Coupon code: </div>
+          <div class="labels">Coupon code:</div>
           <div class="coupon right">
             <input maxlength="8" placeholder="XXXX-XXXX"/>
-            <button>ENTER</button>
+            <button id="enterCoupon" type="button">ENTER</button>
           </div>
         </article>
       
         <article>
-          <div class="labels">GrandTotal: </div>
+          <div class="labels">GrandTotal:</div>
           <div id="grandTotal" class="price right">43.97$</div>
         </article>
+
+        <div id="error"><span>*</span>: required fields!</div>
       </div>
-      <h2>ORDER</h2>
+      <button type="submit" id="submitOrder">ORDER</button>
     </section>
   </form>
 

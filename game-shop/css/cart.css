@@ -194,21 +194,19 @@ a {
   margin: 0 auto 25px;
   border-radius: 8px;
 }
-#checkout h1, #checkout h2 {
+#checkout h1 {
   text-align: center;
   margin: 0;
   font-family: Audiowide, "Lucida Handwriting", cursive;
   font-size: 13vw;
   color: rgb(180, 5, 180);
-}
-@media only screen and (min-width: 500px) {
-  #checkout h1, #checkout h2 {
-    font-size: 60px;
-  }
-}
-#checkout h1 {
   border-bottom: 2px dashed rgb(180, 5, 180);
   padding: 30px 0;
+}
+@media only screen and (min-width: 500px) {
+  #checkout h1 {
+    font-size: 60px;
+  }
 }
 #checkout #contain-checkout-info {
   padding: 14px;
@@ -227,6 +225,11 @@ a {
   font-size: 24px;
   font-weight: bold;
 }
+@media only screen and (min-width: 768px) {
+  #checkout article .labels, #checkout article .price {
+    font-size: 30px;
+  }
+}
 #checkout article .labels {
   color: rgb(180, 5, 180);
 }
@@ -235,10 +238,21 @@ a {
     font-size: 16px;
   }
 }
+#checkout article .labels span {
+  color: red;
+}
 #checkout article .price {
   color: rgb(224, 4, 224);
 }
-#checkout h2 {
+#checkout #submitOrder {
+  all: unset;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-family: Audiowide, "Lucida Handwriting", cursive;
+  font-size: 13vw;
+  color: rgb(180, 5, 180);
   transition: 300ms;
   -webkit-transition: 300ms;
   -o-transition: 300ms;
@@ -247,7 +261,12 @@ a {
   padding: 15px 0;
   cursor: pointer;
 }
-#checkout h2:hover {
+@media only screen and (min-width: 500px) {
+  #checkout #submitOrder {
+    font-size: 60px;
+  }
+}
+#checkout #submitOrder:hover {
   color: rgb(44, 7, 44);
   background-color: rgb(180, 5, 180);
 }
@@ -284,13 +303,52 @@ a {
 #checkout .right input:focus, #checkout .right select:focus {
   box-shadow: 0 1px 10px rgb(224, 4, 224), 0 -1px 10px rgb(224, 4, 224), 1px 0 10px rgb(224, 4, 224), -1px 0 10px rgb(224, 4, 224);
 }
-#checkout .right ::-moz-placeholder {
+#checkout ::-moz-placeholder {
   color: #535252;
   font-weight: normal;
 }
-#checkout .right ::placeholder {
+#checkout ::placeholder {
   color: #535252;
   font-weight: normal;
+}
+#checkout .coupon input {
+  border-radius: 8px 0 0 8px;
+}
+#checkout #enterCoupon {
+  all: unset;
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  -moz-transition: 300ms;
+  border: 1px outset rgb(180, 5, 180);
+  display: block;
+  padding: 0 7px;
+  color: rgb(224, 4, 224);
+  height: 31px;
+  font-weight: bold;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+@media only screen and (min-width: 301px) {
+  #checkout #enterCoupon {
+    height: 36px;
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #checkout #enterCoupon {
+    height: 47px;
+    font-size: 24px;
+  }
+}
+#checkout #enterCoupon:hover {
+  background: rgb(224, 4, 224);
+  color: rgb(44, 7, 44);
+}
+#checkout #error {
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 footer {
