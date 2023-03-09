@@ -14,6 +14,7 @@ function load(){
   createHeader();
   createNavBar();
   createFooter();
+  createSideBarMenu();
 }
 function homeLoad(){
   load();
@@ -183,7 +184,7 @@ function createNavBar(){
       ${svgs[2]}
     </section>
 
-    <section id="sidebar" onclick="openRightMenu()">
+    <section id="sidebar" onclick="openSideBarMenu()">
       ${svgs[3]}
     </section>
   </div>
@@ -240,6 +241,20 @@ function addHomeCatalogSrc(){
   for(let i in cards){
     cards[i].src = sources[i];
   }
+}
+function createSideBarMenu(){
+  let side = document.querySelector("#menu");
+  let links = [];
+
+  side.innerHTML = `
+  <h2 class="font-effect-neon">Context Menu</h2>
+  <a href="#">Keyboard</a>
+  <a href="#">Mouse</a>
+  <a href="#">Headphones</a>
+  <a href="#">Gaming-Chair</a>
+  <a href="#">Finger-Sleeves</a>
+  <a href="#">Gift-Cards</a>
+  `;
 }
 
 
