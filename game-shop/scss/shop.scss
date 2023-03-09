@@ -191,10 +191,20 @@ nav{
   overflow: hidden;
   z-index: 10;
   top: 0;
-  left: 0;
-  @include transition(500ms);
+  @include transition(1s);
 
   // desgin and styles
+  // remove icon
+  span{
+    position: absolute;
+    font-size: 40px;
+    right: 2.5%;
+    cursor: pointer;
+    @include transition(300ms);
+
+    &:hover{ color: $mainCol5; }
+  }
+
   // title
   h2{
     color: $darkCol;
@@ -202,7 +212,10 @@ nav{
     text-align: center;
     border-bottom: 2px dashed $darkCol;
     margin: 0;
-    padding: 20px 0 15px;
+    padding: 40px 0 15px;
+    @include media($bigPhone){
+      padding-top: 20px;
+    }
   }
   // links
   a{

@@ -14,7 +14,7 @@ function load(){
   createHeader();
   createNavBar();
   createFooter();
-  createSideBarMenu();
+  createSidebarMenu();
 }
 function homeLoad(){
   load();
@@ -26,12 +26,10 @@ function homeLoad(){
 
 // common css for main components
 function addGoogleFont(){
-  let cssFiles = [
-    // google fonts
-    "https://fonts.googleapis.com/css?family=Audiowide&effect=neon"
-  ];
+  let fonts = "https://fonts.googleapis.com/css?family=Audiowide&effect=neon";
+
   head.innerHTML += `
-  <link rel="stylesheet" href="${cssFiles[0]}"/>`;
+  <link rel="stylesheet" href="${fonts}"/>`;
 }
 
 // add icon to the page
@@ -184,7 +182,7 @@ function createNavBar(){
       ${svgs[2]}
     </section>
 
-    <section id="sidebar" onclick="openSideBarMenu()">
+    <section id="sidebar" onclick="openSidebarMenu()">
       ${svgs[3]}
     </section>
   </div>
@@ -242,12 +240,15 @@ function addHomeCatalogSrc(){
     cards[i].src = sources[i];
   }
 }
-function createSideBarMenu(){
+
+// make the side bar menu
+function createSidebarMenu(){
   let side = document.querySelector("#menu");
   let links = [];
 
   side.innerHTML = `
-  <h2 class="font-effect-neon">Context Menu</h2>
+  <span onclick="closeSidebarMenu()">x</span>
+  <h2 class="font-effect-neon">Categories</h2>
   <a href="#">Keyboard</a>
   <a href="#">Mouse</a>
   <a href="#">Headphones</a>
@@ -256,9 +257,14 @@ function createSideBarMenu(){
   <a href="#">Gift-Cards</a>
   `;
 }
-
-
-
+function openSidebarMenu(){
+  let menu = document.querySelector("#menu");
+  menu.style.height = "100%";
+}
+function closeSidebarMenu(){
+  let menu = document.querySelector("#menu");
+  menu.style.height = "0";
+}
 
 /*------------ sub-functions sections --------------*/ 
 

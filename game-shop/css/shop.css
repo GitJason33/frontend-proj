@@ -275,11 +275,23 @@ nav #search svg {
   overflow: hidden;
   z-index: 10;
   top: 0;
-  left: 0;
-  transition: 500ms;
-  -webkit-transition: 500ms;
-  -o-transition: 500ms;
-  -moz-transition: 500ms;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  -moz-transition: 1s;
+}
+#menu span {
+  position: absolute;
+  font-size: 40px;
+  right: 2.5%;
+  cursor: pointer;
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  -moz-transition: 300ms;
+}
+#menu span:hover {
+  color: rgb(253, 123, 253);
 }
 #menu h2 {
   color: rgb(44, 7, 44);
@@ -287,7 +299,12 @@ nav #search svg {
   text-align: center;
   border-bottom: 2px dashed rgb(44, 7, 44);
   margin: 0;
-  padding: 20px 0 15px;
+  padding: 40px 0 15px;
+}
+@media only screen and (min-width: 500px) {
+  #menu h2 {
+    padding-top: 20px;
+  }
 }
 #menu a {
   transition: 400ms;
