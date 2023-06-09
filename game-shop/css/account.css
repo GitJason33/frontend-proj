@@ -4,11 +4,6 @@
   -moz-box-sizing: border-box;
 }
 
-::-moz-selection {
-  background: rgb(253, 123, 253);
-  color: rgb(44, 7, 44);
-}
-
 ::selection {
   background: rgb(253, 123, 253);
   color: rgb(44, 7, 44);

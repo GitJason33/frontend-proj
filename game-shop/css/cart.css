@@ -4,11 +4,6 @@
   -moz-box-sizing: border-box;
 }
 
-::-moz-selection {
-  background: rgb(253, 123, 253);
-  color: rgb(44, 7, 44);
-}
-
 ::selection {
   background: rgb(253, 123, 253);
   color: rgb(44, 7, 44);
@@ -133,7 +128,6 @@ a {
 .item .quantity .quanDesign div {
   padding: 10px 15px;
   border: 1px solid rgb(224, 4, 224);
-  height: -moz-fit-content;
   height: fit-content;
 }
 .item .quantity .quanDesign div:not(div:nth-child(2)) {
@@ -302,10 +296,6 @@ a {
 }
 #checkout .right input:focus, #checkout .right select:focus {
   box-shadow: 0 1px 10px rgb(224, 4, 224), 0 -1px 10px rgb(224, 4, 224), 1px 0 10px rgb(224, 4, 224), -1px 0 10px rgb(224, 4, 224);
-}
-#checkout ::-moz-placeholder {
-  color: #535252;
-  font-weight: normal;
 }
 #checkout ::placeholder {
   color: #535252;

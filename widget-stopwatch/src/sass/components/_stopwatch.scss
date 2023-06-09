@@ -1,0 +1,54 @@
+$watch_color: cyan;
+
+#stopwatch {
+
+  background-color: rgb(87, 87, 87);
+  border-radius: $radius;
+  border: bord(3px, ridge, $watch_color);
+  
+  @include dimensions(300px);
+  text-align: center;
+  
+  #marching-time{
+    color: $watch_color;
+    font: {
+      size: 30px;
+      family: Audiowide, sans-serif, cursive;
+      style: italic;
+    }
+    padding: 25px 0;
+  }
+
+  span {
+    display: inline-block;
+    margin: 0 $pad;
+  }
+} // #stopwatch
+
+#options{
+  @include flex();
+
+  button{ 
+    all: unset;
+    color: $watch_color;
+    padding: 14px 0;
+    font: {
+      family: sans-serif;
+      size: 20px;
+      weight: bold;
+    }
+    border-top: bord(2px, ridge, $watch_color);
+    
+    flex-grow: 1;
+    @include transition(200ms);
+    
+    &:not(:last-child){
+      border-right: bord(2px, ridge, $watch_color);
+    }
+    &:hover{
+      background-color: $watch_color;
+      color: $dark;
+    }
+    cursor: pointer;
+  } // button
+} // #options

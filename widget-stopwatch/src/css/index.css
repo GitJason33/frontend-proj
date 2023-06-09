@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+::selection {
+  background-color: yellow;
+  color: #2f2f2f;
+}
+
+input::selection {
+  background-color: #2f2f2f;
+  color: yellow;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: whitesmoke;
+  margin: 0;
+  font-family: Garamond, serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+main {
+  padding: 7px;
+}
+
+#stopwatch {
+  background-color: rgb(87, 87, 87);
+  border-radius: 8px;
+  border: 3px ridge cyan;
+  width: 300px;
+  height: auto;
+  text-align: center;
+}
+#stopwatch #marching-time {
+  color: cyan;
+  font-size: 30px;
+  font-family: Audiowide, sans-serif, cursive;
+  font-style: italic;
+  padding: 25px 0;
+}
+#stopwatch span {
+  display: inline-block;
+  margin: 0 7px;
+}
+
+#options {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+}
+#options button {
+  all: unset;
+  color: cyan;
+  padding: 14px 0;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  border-top: 2px ridge cyan;
+  flex-grow: 1;
+  transition: 200ms;
+  -webkit-transition: 200ms;
+  -o-transition: 200ms;
+  -moz-transition: 200ms;
+  cursor: pointer;
+}
+#options button:not(:last-child) {
+  border-right: 2px ridge cyan;
+}
+#options button:hover {
+  background-color: cyan;
+  color: #2f2f2f;
+}/*# sourceMappingURL=index.css.map */

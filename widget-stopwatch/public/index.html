@@ -11,10 +11,24 @@
     
     <!-- import jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- import google font: faster one -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
   </head>
   <body>
     <main id="root">
-      
+      <div id="stopwatch">
+        <section id="marching-time">
+          <span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span>
+        </section>
+        
+        <section id="options">
+          <button onclick="start()">start</button>
+          <button onclick="stop()">stop</button>
+          <button onclick="reset()">reset</button>
+        </section>
+      </div>
+
     </main>
   </body>
 </html>

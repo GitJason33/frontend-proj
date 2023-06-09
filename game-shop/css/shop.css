@@ -4,11 +4,6 @@
   -moz-box-sizing: border-box;
 }
 
-::-moz-selection {
-  background: rgb(253, 123, 253);
-  color: rgb(44, 7, 44);
-}
-
 ::selection {
   background: rgb(253, 123, 253);
   color: rgb(44, 7, 44);
@@ -323,10 +318,6 @@ nav #search .icon {
   background-color: rgb(44, 7, 44);
 }
 
-::-moz-placeholder {
-  color: rgb(44, 7, 44);
-}
-
 ::placeholder {
   color: rgb(44, 7, 44);
 }
@@ -424,6 +415,7 @@ footer {
 @media only screen and (min-width: 500px) {
   footer {
     display: grid;
+    display: -ms-grid;
     display: -moz-grid;
     grid-template-columns: auto auto;
     text-align: left;
