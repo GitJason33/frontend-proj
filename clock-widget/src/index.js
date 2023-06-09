@@ -33,7 +33,7 @@ let { hour, minute, second } = TIME_NOW();
 setInterval(() => {
   second++;
   if(second % 60 === 0) minute++;
-  if(minute % 60 === 0) hour++;
+  if(minute % 60 === 0 && second % 60 === 0) hour++;
 
   updateClock({ hour, second, minute });
 }, 1000);
