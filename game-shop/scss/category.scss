@@ -1,0 +1,48 @@
+@import "config";
+
+#item-contain{
+  @include flex;
+  justify-content: space-around;
+  align-items: center;
+}
+// image
+.img-card{
+  margin-bottom: $marg;
+  width: 90vw;
+  @include media($bigPhone){
+    width: 75vw;
+  }
+  @include media($tablet){
+    width: 300px;
+    margin: $marg;
+  }
+
+  div{
+    border: 2px ridge $mainCol1;
+    border-radius: $bordRad;
+    overflow: hidden;
+
+    img{
+      width: 100%;
+      height: auto;
+      @include media($tablet){
+        height: 250px;
+      }
+    }
+    article{
+      padding: $pad;
+      color: $mainCol3;
+      font: {
+        size: 20px; 
+        weight: bold;
+      }
+    }
+    &:hover{
+      border-color: $mainCol1;
+      cursor: pointer;
+      box-shadow:
+        0 4px 30px 20px rgba(255, 0, 255),
+        0 6px 40px 20px rgba(255, 0, 255);
+    }
+  }
+}

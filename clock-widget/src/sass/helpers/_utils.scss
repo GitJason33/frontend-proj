@@ -1,0 +1,31 @@
+
+// utitility functions and mixins. add whatever you need here. delete unused ones.
+@mixin center{
+  @include flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@function bord($w: 3px, $s: outset, $c: $main){
+  @return $w $s $c;
+}
+
+@mixin dimensions($w: auto, $h: auto){
+  width: $w;
+  height: $h;
+}
+
+@mixin arrower($len, $color, $width){
+  background-color: $color;
+  @include dimensions($width, $len);
+  border-radius: $radius;
+
+  position: absolute;
+  z-index: 3;
+
+  bottom: 50%;
+  @include transition(300ms transform);
+
+  // center of rotation is down
+  @include transform_origin(bottom center);
+}

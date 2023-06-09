@@ -1,0 +1,10 @@
+{
+  "logo": "media/images/logo.png",
+  "home": "media/images/svg/home.svg",
+  "search": "media/images/svg/search.svg",
+  "sidebar": "media/images/svg/sidebar.svg",
+  "cart": "media/images/svg/cart.svg",
+
+  "whatsapp": "media/images/svg/whatsapp.svg",
+  "instagram": "media/images/svg/instagram.svg"
+}

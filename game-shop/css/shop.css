@@ -26,13 +26,13 @@ a {
   color: unset;
 }
 
-svg {
+.icon {
   height: 24px;
   width: 24px;
   stroke-width: 2px;
 }
 
-svg:not(#homeTab svg) {
+.icon:not(#homeTab .icon) {
   transform: translateY(2px);
   -o-transform: translateY(2px);
   -webkit-transform: translateY(2px);
@@ -202,12 +202,12 @@ nav #search input {
 nav #search input:focus {
   border-color: rgb(44, 7, 44);
 }
-nav #search svg {
+nav #search .icon {
   z-index: 4;
   left: 18px;
 }
 @media only screen and (min-width: 768px) {
-  nav #search svg {
+  nav #search .icon {
     position: absolute;
     color: rgb(44, 7, 44);
     transform: translateY(0px);
@@ -265,7 +265,7 @@ nav #search svg {
   }
 }
 
-/*---------------- CONTEXT MENU ----------------*/
+/*---------------- sidebar MENU ----------------*/
 #menu {
   text-align: center;
   font-family: Audiowide, "Lucida Handwriting", cursive;
@@ -323,7 +323,15 @@ nav #search svg {
   background-color: rgb(44, 7, 44);
 }
 
-/*---------------- CONTEXT MENU END ----------------*/
+::-moz-placeholder {
+  color: rgb(44, 7, 44);
+}
+
+::placeholder {
+  color: rgb(44, 7, 44);
+}
+
+/*---------------- sidebar MENU END ----------------*/
 /*---------------- CATALOG -----------------*/
 #main-content {
   text-align: center;
@@ -345,7 +353,8 @@ nav #search svg {
     font-size: 70px;
   }
 }
-#main-content #img-contain {
+
+#img-contain {
   display: flex;
   display: -webkit-flex;
   flex-flow: row wrap;
@@ -353,42 +362,43 @@ nav #search svg {
   justify-content: space-around;
   align-items: center;
 }
-#main-content .img-card {
+
+.img-card {
   margin-bottom: 25px;
   width: 90vw;
 }
 @media only screen and (min-width: 500px) {
-  #main-content .img-card {
+  .img-card {
     width: 75vw;
   }
 }
 @media only screen and (min-width: 768px) {
-  #main-content .img-card {
+  .img-card {
     width: 300px;
     margin: 25px;
   }
 }
-#main-content .img-card div {
+.img-card div {
   border: 2px ridge purple;
   border-radius: 8px;
   overflow: hidden;
 }
-#main-content .img-card div img {
+.img-card div img {
   width: 100%;
   height: auto;
 }
 @media only screen and (min-width: 768px) {
-  #main-content .img-card div img {
+  .img-card div img {
     height: 250px;
   }
 }
-#main-content .img-card div article {
+.img-card div article {
   padding: 7px;
   color: rgb(224, 4, 224);
   font-size: 20px;
   font-weight: bold;
 }
-#main-content .img-card div:hover {
+.img-card div:hover {
   border-color: purple;
   cursor: pointer;
   box-shadow: 0 4px 30px 20px rgb(255, 0, 255), 0 6px 40px 20px rgb(255, 0, 255);
@@ -406,11 +416,6 @@ footer {
   border-top: 1px ridge rgb(44, 7, 44);
   box-shadow: 0 -1px 20px 5px rgb(255, 0, 255), 0 -1px 20px 5px rgb(255, 0, 255);
 }
-@media only screen and (min-width: 992px) {
-  footer {
-    box-shadow: none;
-  }
-}
 @media only screen and (max-width: 300px) {
   footer {
     font-size: 16px;
@@ -426,13 +431,13 @@ footer {
   }
 }
 @media only screen and (max-width: 300px) {
-  footer svg {
+  footer .icon {
     height: 16px;
     width: 16px;
   }
 }
 @media only screen and (min-width: 768px) {
-  footer svg {
+  footer .icon {
     height: 30px;
     width: 30px;
   }

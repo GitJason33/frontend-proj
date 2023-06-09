@@ -1,11 +1,11 @@
 @import "config";
 
-svg {
+.icon {
   height: 24px;
   width: 24px;
   stroke-width: 2px;
 }
-svg:not(#homeTab svg){
+.icon:not(#homeTab .icon){
   @include transform(translateY(2px));
 }
 header, footer, #menu{
@@ -131,7 +131,7 @@ nav{
         border-color: $darkCol;
       }
     }
-    svg{
+    .icon{
       z-index: 4;
       left: 18px;
       @include media($tablet){
@@ -181,7 +181,7 @@ nav{
     }
   }
 }
-/*---------------- CONTEXT MENU ----------------*/
+/*---------------- sidebar MENU ----------------*/
 #menu{
   text-align: center;
   font-family: $fontTitle;
@@ -233,7 +233,10 @@ nav{
     }
   }
 }
-/*---------------- CONTEXT MENU END ----------------*/
+::placeholder{
+  color: $darkCol;
+}
+/*---------------- sidebar MENU END ----------------*/
 
 /*---------------- CATALOG -----------------*/
 #main-content{
@@ -255,50 +258,51 @@ nav{
       font-size: 70px;
     }
   }
-  #img-contain{
-    @include flex;
-    justify-content: space-around;
-    align-items: center;
+  
+}
+#img-contain{
+  @include flex;
+  justify-content: space-around;
+  align-items: center;
+}
+// image
+.img-card{
+  margin-bottom: $marg;
+  width: 90vw;
+  @include media($bigPhone){
+    width: 75vw;
   }
-  // image
-  .img-card{
-    margin-bottom: $marg;
-    width: 90vw;
-    @include media($bigPhone){
-      width: 75vw;
-    }
-    @include media($tablet){
-      width: 300px;
-      margin: $marg;
-    }
+  @include media($tablet){
+    width: 300px;
+    margin: $marg;
+  }
 
-    div{
-      border: 2px ridge $mainCol1;
-      border-radius: $bordRad;
-      overflow: hidden;
+  div{
+    border: 2px ridge $mainCol1;
+    border-radius: $bordRad;
+    overflow: hidden;
 
-      img{
-        width: 100%;
-        height: auto;
-        @include media($tablet){
-          height: 250px;
-        }
+    img{
+      width: 100%;
+      height: auto;
+      @include media($tablet){
+        height: 250px;
       }
-      article{
-        padding: $pad;
-        color: $mainCol3;
-        font: {
-          size: 20px; 
-          weight: bold;
-        }
+    }
+    article{
+      padding: $pad;
+      color: $mainCol3;
+      font: {
+        size: 20px; 
+        weight: bold;
       }
-      &:hover{
-        border-color: $mainCol1;
-        cursor: pointer;
-        box-shadow:
-          0 4px 30px 20px rgba(255, 0, 255),
-          0 6px 40px 20px rgba(255, 0, 255);
-      }
+    }
+    &:hover{
+      border-color: $mainCol1;
+      cursor: pointer;
+      box-shadow:
+        0 4px 30px 20px rgba(255, 0, 255),
+        0 6px 40px 20px rgba(255, 0, 255);
     }
   }
 }
@@ -316,13 +320,9 @@ footer{
   }
   border-top: 1px ridge $darkCol;
 
-  // extra effect for tablets and phones
   box-shadow: 
     0 -1px 20px 5px rgba(255, 0, 255),
     0 -1px 20px 5px rgba(255, 0, 255);
-  @include media($laptop){
-    box-shadow: none;
-  }
 
   // responsive footer 
   @include media($small){
@@ -335,8 +335,8 @@ footer{
     justify-content: space-between;
   }
 
-  // svg responsive
-  svg{
+  // responsve icon
+  .icon{
     @include media($small){
       height: 16px;
       width: 16px;

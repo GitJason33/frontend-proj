@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+::selection {
+  background-color: yellow;
+  color: #2f2f2f;
+}
+
+input::selection {
+  background-color: #2f2f2f;
+  color: yellow;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: whitesmoke;
+  margin: 0;
+  font-family: Garamond, serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+main {
+  padding: 7px;
+}
+
+#clock {
+  background-color: #2f2f2f;
+  width: 300px;
+  height: 300px;
+  border: 3px outset yellow;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+#clock .mid-point {
+  background-color: #2f2f2f;
+  border: 3px groove yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+#clock .arrows {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#clock .arrows .hour {
+  background-color: silver;
+  width: 5px;
+  height: 50px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 3;
+  bottom: 50%;
+  transition: 300ms transform;
+  -webkit-transition: 300ms transform;
+  -o-transition: 300ms transform;
+  -moz-transition: 300ms transform;
+  transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+}
+#clock .arrows .minute {
+  background-color: white;
+  width: 3px;
+  height: 90px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 3;
+  bottom: 50%;
+  transition: 300ms transform;
+  -webkit-transition: 300ms transform;
+  -o-transition: 300ms transform;
+  -moz-transition: 300ms transform;
+  transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+}
+#clock .arrows .second {
+  background-color: dodgerblue;
+  width: 2px;
+  height: 130px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 3;
+  bottom: 50%;
+  transition: 300ms transform;
+  -webkit-transition: 300ms transform;
+  -o-transition: 300ms transform;
+  -moz-transition: 300ms transform;
+  transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+}
+#clock .numbering-modal {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+#clock .numbering-modal span {
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  inset: 21px;
+  transform: rotate(calc(var(--i) * 30deg));
+  -o-transform: rotate(calc(var(--i) * 30deg));
+  -webkit-transform: rotate(calc(var(--i) * 30deg));
+  -moz-transform: rotate(calc(var(--i) * 30deg));
+  -ms-transform: rotate(calc(var(--i) * 30deg));
+}
+#clock .numbering-modal span b {
+  color: yellow;
+  opacity: 0.7;
+  display: inline-block;
+  transform: rotate(calc(var(--i) * -30deg));
+  -o-transform: rotate(calc(var(--i) * -30deg));
+  -webkit-transform: rotate(calc(var(--i) * -30deg));
+  -moz-transform: rotate(calc(var(--i) * -30deg));
+  -ms-transform: rotate(calc(var(--i) * -30deg));
+  font-weight: 700;
+  font-size: 20px;
+  font-family: cursive;
+}
+#clock .dashing-modal {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+#clock .dashing-modal span {
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  inset: 1px;
+  transform: rotate(calc(var(--j) * 6deg));
+  -o-transform: rotate(calc(var(--j) * 6deg));
+  -webkit-transform: rotate(calc(var(--j) * 6deg));
+  -moz-transform: rotate(calc(var(--j) * 6deg));
+  -ms-transform: rotate(calc(var(--j) * 6deg));
+}
+#clock .dashing-modal span b {
+  width: 1.5px;
+  height: 12px;
+  background-color: whitesmoke;
+  opacity: 0.3;
+  display: inline-block;
+}/*# sourceMappingURL=index.css.map */
