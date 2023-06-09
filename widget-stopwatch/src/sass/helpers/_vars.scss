@@ -1,0 +1,26 @@
+
+// color palette
+$main: yellow;
+$light: whitesmoke;
+$dark: #2f2f2f;
+$extra: cyan;
+
+// fonts
+$fontText: Garamond, serif;
+$fontTitle: "Lucida Handwriting", cursive;
+
+// spacings
+$pad: 7px;
+$marg: 25px;
+
+// border styling
+$radius: 8px;
+
+// responsive media breakpoints
+$small: "max-width: 300px";
+$phone: "min-width: 301px";
+$bigPhone: "min-width: 500px";
+$tablet: "min-width: 768px";
+$laptop: "min-width: 992px";
+$desktop: "min-width: 1200px";
+$huge: "min-width: 1800px";

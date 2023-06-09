@@ -1,0 +1,16 @@
+
+// utitility functions and mixins. add whatever you need here. delete unused ones.
+@mixin center{
+  @include flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@function bord($w: 3px, $s: outset, $c: $main){
+  @return $w $s $c;
+}
+
+@mixin dimensions($w: auto, $h: auto){
+  width: $w;
+  height: $h;
+}
