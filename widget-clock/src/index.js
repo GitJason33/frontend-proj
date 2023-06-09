@@ -48,6 +48,11 @@ function updateClock({ hour, minute, second }){
   $(".hour").css("transform", `rotate(${bonusHourRotation}deg)`);
 }
 
+function fixClock(){
+  let now = TIME_NOW();
+  [ second, minute, hour ] = [ now.second, now.minute, now.hour ];
+}
+
 // function to get time right now for loading
 function TIME_NOW() {
   const now = new Date();
