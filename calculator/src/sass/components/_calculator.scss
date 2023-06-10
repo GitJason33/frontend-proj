@@ -8,8 +8,9 @@ $calc_font: consolas, 'Courier New', Courier, monospace;
   background-color: $calc_bg;
   padding: $calc_spacing;
   border: 5px solid grey;
-  max-width: 500px;
+  max-width: 350px;
   border-radius: $calc_spacing;
+  margin: auto;
   
   .calc__title{
     text-align: center;

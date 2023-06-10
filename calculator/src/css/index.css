@@ -34,8 +34,9 @@ main {
   background-color: rgb(32, 30, 30);
   padding: 7px;
   border: 5px solid grey;
-  max-width: 500px;
+  max-width: 350px;
   border-radius: 7px;
+  margin: auto;
 }
 #calculator .calc__title {
   text-align: center;
