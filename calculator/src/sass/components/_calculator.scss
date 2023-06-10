@@ -1,0 +1,78 @@
+$calc_bg: rgb(32, 30, 30);
+$calc_color: #e9e5e5;
+$calc_screen: rgb(100, 128, 0);
+$calc_spacing: 7px;
+$calc_font: consolas, 'Courier New', Courier, monospace;
+
+#calculator{
+  background-color: $calc_bg;
+  padding: $calc_spacing;
+  border: 5px solid grey;
+  max-width: 500px;
+  border-radius: $calc_spacing;
+  
+  .calc__title{
+    text-align: center;
+    font-family: $calc_font;
+    color: orange;
+    padding: $calc_spacing*2 0;
+    margin: 0;
+  }
+}
+
+#calculator .calc__input{
+  background-color: $calc_screen;
+  border: 10px groove $calc_bg;
+  margin-bottom: $calc_spacing;
+  border-radius: $calc_spacing;
+  padding: $calc_spacing;
+  font-family: $calc_font;
+  
+  input{
+    all: unset;
+    display: block;
+    padding-bottom: $calc_spacing*3;
+    &::placeholder{ color: $calc_bg; }
+    width: 100%;
+  }
+  h3{ 
+    margin: 0;
+    text-align: right;
+  }
+}
+
+#calculator .calc__buttons{
+  display: grid;
+
+  // repeat(number_of_repetitions, repeated pattern)
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  
+  button{
+    height: 25px;
+    background-color: rgb(78, 78, 78);
+    color: $calc_color;
+    font: {
+      size: 16px;
+      weight: bold;
+      font-family: $calc_font;
+    }
+    border: 1px solid black;
+    cursor: pointer;
+
+    &:active:not(:disabled){
+      background-color: darken(rgb(78, 78, 78), 5);
+    }
+    &:disabled{
+      cursor: not-allowed;
+    }
+    &#del, &#clr{
+      color: $calc_bg;
+      background-color: orange;
+      &:active{
+        background-color: darken(orange, 8);
+      }
+    }
+  }
+  
+}

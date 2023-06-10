@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+::selection {
+  background-color: orange;
+  color: #2f2f2f;
+}
+
+input::selection {
+  background-color: #2f2f2f;
+  color: orange;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: whitesmoke;
+  margin: 0;
+  font-family: Garamond, serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+main {
+  padding: 7px;
+}
+
+#calculator {
+  background-color: rgb(32, 30, 30);
+  padding: 7px;
+  border: 5px solid grey;
+  max-width: 500px;
+  border-radius: 7px;
+}
+#calculator .calc__title {
+  text-align: center;
+  font-family: consolas, "Courier New", Courier, monospace;
+  color: orange;
+  padding: 14px 0;
+  margin: 0;
+}
+
+#calculator .calc__input {
+  background-color: rgb(100, 128, 0);
+  border: 10px groove rgb(32, 30, 30);
+  margin-bottom: 7px;
+  border-radius: 7px;
+  padding: 7px;
+  font-family: consolas, "Courier New", Courier, monospace;
+}
+#calculator .calc__input input {
+  all: unset;
+  display: block;
+  padding-bottom: 21px;
+  width: 100%;
+}
+#calculator .calc__input input::placeholder {
+  color: rgb(32, 30, 30);
+}
+#calculator .calc__input h3 {
+  margin: 0;
+  text-align: right;
+}
+
+#calculator .calc__buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+}
+#calculator .calc__buttons button {
+  height: 25px;
+  background-color: rgb(78, 78, 78);
+  color: #e9e5e5;
+  font-size: 16px;
+  font-weight: bold;
+  font-font-family: consolas, "Courier New", Courier, monospace;
+  border: 1px solid black;
+  cursor: pointer;
+}
+#calculator .calc__buttons button:active:not(:disabled) {
+  background-color: #414141;
+}
+#calculator .calc__buttons button:disabled {
+  cursor: not-allowed;
+}
+#calculator .calc__buttons button#del, #calculator .calc__buttons button#clr {
+  color: rgb(32, 30, 30);
+  background-color: orange;
+}
+#calculator .calc__buttons button#del:active, #calculator .calc__buttons button#clr:active {
+  background-color: #d68b00;
+}/*# sourceMappingURL=index.css.map */
