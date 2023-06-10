@@ -12,23 +12,32 @@
     <!-- import jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <!-- import google font: faster one -->
+    <!-- import google font: Audiowide -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
   </head>
   <body>
     <main id="root">
       <div id="stopwatch">
-        <section id="marching-time">
-          <span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span>:<span class="millis">000</span>
+        <section class="stopwatch__container">
+          <section class="stopwatch__marching-time">
+            <span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span>:<span class="millis">000</span>
+          </section>
+          
+          <section class="stopwatch__options">
+            <button onclick="start()">start</button>
+            <button onclick="stop()">stop</button>
+            <button onclick="reset()">reset</button>
+            <button onclick="saveRecord()">save</button>
+          </section>
         </section>
-        
-        <section id="options">
-          <button onclick="start()">start</button>
-          <button onclick="stop()">stop</button>
-          <button onclick="reset()">reset</button>
+
+        <button class="stopwatch__record-clear" onclick="clearRecords()">clear records</button>
+
+        <section class="stopwatch__records">
+          <h1>Records</h1>
+          <div class="stopwatch__records-container"></div>
         </section>
       </div>
-
     </main>
   </body>
 </html>

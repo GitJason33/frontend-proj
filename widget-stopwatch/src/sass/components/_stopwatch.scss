@@ -1,15 +1,44 @@
 $watch_color: cyan;
+$watch_bg: rgb(87, 87, 87);
+$watch_spacing: 10px;
+$watch_border: 3px ridge $watch_color;
+$watch_width: 350px;
 
-#stopwatch {
 
-  background-color: rgb(87, 87, 87);
-  border-radius: $radius;
-  border: bord(3px, ridge, $watch_color);
-  
-  @include dimensions(350px);
+::root{
+  // counter for number of records
+  counter-reset: records;
+}
+
+.button_common_style{
+  all: unset;
+  @include box_size();
+  color: $watch_color;
+
+  padding: ($watch_spacing * 2) 0;
+  font: {
+    family: sans-serif;
+    weight: bold;
+  }
+
+  &:hover {
+    background-color: $watch_color;
+    color: $watch_bg;
+  }
+
+  cursor: pointer;
+  @include transition(200ms);
+}
+
+#stopwatch .stopwatch__container {
+  background-color: $watch_bg;
+  border-radius: $watch_spacing;
+  border: $watch_border;
+
+  @include dimensions($watch_width);
   text-align: center;
-  
-  #marching-time{
+
+  .stopwatch__marching-time {
     color: $watch_color;
     font: {
       size: 26px;
@@ -19,45 +48,93 @@ $watch_color: cyan;
     padding: 25px 0;
     @include flex();
     justify-content: center;
-    
+
     span {
       display: inline-block;
-      margin: 0 $pad;
+      margin: 0 $watch_spacing;
     }
-    span:not(.millis){
+    span:not(.millis) {
       width: 49px;
     }
-    .millis{
+    .millis {
       width: 64px;
     }
   }
 
-  #options{
+  .stopwatch__options {
     @include flex();
-  
-    button{ 
-      all: unset;
-      color: $watch_color;
-      padding: 14px 0;
-      border-top: bord(2px, ridge, $watch_color);
-      font: {
-        family: sans-serif;
-        size: 20px;
-        weight: bold;
-      }
-      
-      flex-grow: 1;
-      @include transition(200ms);
-      
-      &:not(:last-child){
-        border-right: bord(2px, ridge, $watch_color);
-      }
-      &:hover{
-        background-color: $watch_color;
-        color: $dark;
-      }
-      cursor: pointer;
-    } // button
-  } // #options
-} // #stopwatch
 
+    button {
+      @extend .button_common_style;
+      border-top: $watch_border;
+      &:not(:last-child) {
+        border-right: $watch_border;
+      }
+      font-size: 18px;
+      flex-grow: 1;
+    } // button
+  } // .stopwatch__options
+} // #stopwatch .stopwatch__container
+
+#stopwatch .stopwatch__records {
+  background-color: $watch_bg;
+  @include dimensions($watch_width);
+  padding: $watch_spacing;
+  border-radius: $watch_spacing;
+  border: $watch_border;
+
+  h1{ 
+    text-align: center;
+    border-bottom: $watch_border;
+    color: $watch_color;
+    margin: 0;
+    padding: 0 0 $watch_spacing;
+    font: {
+      family: Audiowide, sans-serif;
+      weight: normal;
+    }// fonts
+  }// h1
+
+  .stopwatch__single-record{
+    counter-increment: records;
+    h3 {
+      margin: 0;
+      color: $watch_color;
+      padding-top: $watch_spacing;
+      
+      font: {
+        family: consolas, cursive;
+        style: italic;
+      }
+
+      &::before{
+        content: counter(records)") ";
+      }
+    } // h2
+  
+    p {
+      margin-bottom: 0;
+      font-family: Roboto, sans-serif; // fonts
+      color: white;
+    } // p
+
+    &:not(:last-child){
+      border-bottom: $watch_border;
+      padding-bottom: $watch_spacing;
+    } 
+  } // .stopwatch__single-records
+} // .stopwatch__records
+
+#stopwatch .stopwatch__record-clear{
+  @extend .button_common_style;
+
+  display: inline-block;
+  @include dimensions($watch_width);
+  margin: $watch_spacing*2 0;
+  background-color: $watch_bg;
+
+  border: $watch_border;
+  border-radius: $watch_spacing;
+  text-align: center;
+  font-size: 24px;
+}

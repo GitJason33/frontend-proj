@@ -30,15 +30,39 @@ main {
   padding: 7px;
 }
 
-#stopwatch {
+::root {
+  counter-reset: records;
+}
+
+.button_common_style, #stopwatch .stopwatch__record-clear, #stopwatch .stopwatch__container .stopwatch__options button {
+  all: unset;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: cyan;
+  padding: 20px 0;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 200ms;
+  -webkit-transition: 200ms;
+  -o-transition: 200ms;
+  -moz-transition: 200ms;
+}
+.button_common_style:hover, #stopwatch .stopwatch__record-clear:hover, #stopwatch .stopwatch__container .stopwatch__options button:hover {
+  background-color: cyan;
+  color: rgb(87, 87, 87);
+}
+
+#stopwatch .stopwatch__container {
   background-color: rgb(87, 87, 87);
-  border-radius: 8px;
+  border-radius: 10px;
   border: 3px ridge cyan;
   width: 350px;
   height: auto;
   text-align: center;
 }
-#stopwatch #marching-time {
+#stopwatch .stopwatch__container .stopwatch__marching-time {
   color: cyan;
   font-size: 26px;
   font-family: Audiowide, sans-serif, cursive;
@@ -49,40 +73,78 @@ main {
   flex-flow: row nowrap;
   justify-content: center;
 }
-#stopwatch #marching-time span {
+#stopwatch .stopwatch__container .stopwatch__marching-time span {
   display: inline-block;
-  margin: 0 7px;
+  margin: 0 10px;
 }
-#stopwatch #marching-time span:not(.millis) {
+#stopwatch .stopwatch__container .stopwatch__marching-time span:not(.millis) {
   width: 49px;
 }
-#stopwatch #marching-time .millis {
+#stopwatch .stopwatch__container .stopwatch__marching-time .millis {
   width: 64px;
 }
-#stopwatch #options {
+#stopwatch .stopwatch__container .stopwatch__options {
   display: flex;
   display: -webkit-flex;
   flex-flow: row nowrap;
 }
-#stopwatch #options button {
-  all: unset;
-  color: cyan;
-  padding: 14px 0;
-  border-top: 2px ridge cyan;
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: bold;
+#stopwatch .stopwatch__container .stopwatch__options button {
+  border-top: 3px ridge cyan;
+  font-size: 18px;
   flex-grow: 1;
-  transition: 200ms;
-  -webkit-transition: 200ms;
-  -o-transition: 200ms;
-  -moz-transition: 200ms;
-  cursor: pointer;
 }
-#stopwatch #options button:not(:last-child) {
-  border-right: 2px ridge cyan;
+#stopwatch .stopwatch__container .stopwatch__options button:not(:last-child) {
+  border-right: 3px ridge cyan;
 }
-#stopwatch #options button:hover {
-  background-color: cyan;
-  color: #2f2f2f;
+
+#stopwatch .stopwatch__records {
+  background-color: rgb(87, 87, 87);
+  width: 350px;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px ridge cyan;
+}
+#stopwatch .stopwatch__records h1 {
+  text-align: center;
+  border-bottom: 3px ridge cyan;
+  color: cyan;
+  margin: 0;
+  padding: 0 0 10px;
+  font-family: Audiowide, sans-serif;
+  font-weight: normal;
+}
+#stopwatch .stopwatch__records .stopwatch__single-record {
+  counter-increment: records;
+}
+#stopwatch .stopwatch__records .stopwatch__single-record h3 {
+  margin: 0;
+  color: cyan;
+  padding-top: 10px;
+  font-family: consolas, cursive;
+  font-style: italic;
+}
+#stopwatch .stopwatch__records .stopwatch__single-record h3::before {
+  content: counter(records) ") ";
+}
+#stopwatch .stopwatch__records .stopwatch__single-record p {
+  margin-bottom: 0;
+  font-family: Roboto, sans-serif;
+  color: white;
+}
+#stopwatch .stopwatch__records .stopwatch__single-record:not(:last-child) {
+  border-bottom: 3px ridge cyan;
+  padding-bottom: 10px;
+}
+
+#stopwatch .stopwatch__record-clear {
+  display: inline-block;
+  width: 350px;
+  height: auto;
+  margin: 20px 0;
+  background-color: rgb(87, 87, 87);
+  border: 3px ridge cyan;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
 }/*# sourceMappingURL=index.css.map */
