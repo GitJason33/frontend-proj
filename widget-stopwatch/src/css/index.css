@@ -34,35 +34,44 @@ main {
   background-color: rgb(87, 87, 87);
   border-radius: 8px;
   border: 3px ridge cyan;
-  width: 300px;
+  width: 350px;
   height: auto;
   text-align: center;
 }
 #stopwatch #marching-time {
   color: cyan;
-  font-size: 30px;
+  font-size: 26px;
   font-family: Audiowide, sans-serif, cursive;
   font-style: italic;
   padding: 25px 0;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
-#stopwatch span {
+#stopwatch #marching-time span {
   display: inline-block;
   margin: 0 7px;
 }
-
-#options {
+#stopwatch #marching-time span:not(.millis) {
+  width: 49px;
+}
+#stopwatch #marching-time .millis {
+  width: 64px;
+}
+#stopwatch #options {
   display: flex;
   display: -webkit-flex;
   flex-flow: row nowrap;
 }
-#options button {
+#stopwatch #options button {
   all: unset;
   color: cyan;
   padding: 14px 0;
+  border-top: 2px ridge cyan;
   font-family: sans-serif;
   font-size: 20px;
   font-weight: bold;
-  border-top: 2px ridge cyan;
   flex-grow: 1;
   transition: 200ms;
   -webkit-transition: 200ms;
@@ -70,10 +79,10 @@ main {
   -moz-transition: 200ms;
   cursor: pointer;
 }
-#options button:not(:last-child) {
+#stopwatch #options button:not(:last-child) {
   border-right: 2px ridge cyan;
 }
-#options button:hover {
+#stopwatch #options button:hover {
   background-color: cyan;
   color: #2f2f2f;
 }/*# sourceMappingURL=index.css.map */

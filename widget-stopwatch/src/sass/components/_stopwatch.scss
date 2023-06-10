@@ -6,49 +6,58 @@ $watch_color: cyan;
   border-radius: $radius;
   border: bord(3px, ridge, $watch_color);
   
-  @include dimensions(300px);
+  @include dimensions(350px);
   text-align: center;
   
   #marching-time{
     color: $watch_color;
     font: {
-      size: 30px;
+      size: 26px;
       family: Audiowide, sans-serif, cursive;
       style: italic;
     }
     padding: 25px 0;
+    @include flex();
+    justify-content: center;
+    
+    span {
+      display: inline-block;
+      margin: 0 $pad;
+    }
+    span:not(.millis){
+      width: 49px;
+    }
+    .millis{
+      width: 64px;
+    }
   }
 
-  span {
-    display: inline-block;
-    margin: 0 $pad;
-  }
+  #options{
+    @include flex();
+  
+    button{ 
+      all: unset;
+      color: $watch_color;
+      padding: 14px 0;
+      border-top: bord(2px, ridge, $watch_color);
+      font: {
+        family: sans-serif;
+        size: 20px;
+        weight: bold;
+      }
+      
+      flex-grow: 1;
+      @include transition(200ms);
+      
+      &:not(:last-child){
+        border-right: bord(2px, ridge, $watch_color);
+      }
+      &:hover{
+        background-color: $watch_color;
+        color: $dark;
+      }
+      cursor: pointer;
+    } // button
+  } // #options
 } // #stopwatch
 
-#options{
-  @include flex();
-
-  button{ 
-    all: unset;
-    color: $watch_color;
-    padding: 14px 0;
-    font: {
-      family: sans-serif;
-      size: 20px;
-      weight: bold;
-    }
-    border-top: bord(2px, ridge, $watch_color);
-    
-    flex-grow: 1;
-    @include transition(200ms);
-    
-    &:not(:last-child){
-      border-right: bord(2px, ridge, $watch_color);
-    }
-    &:hover{
-      background-color: $watch_color;
-      color: $dark;
-    }
-    cursor: pointer;
-  } // button
-} // #options
