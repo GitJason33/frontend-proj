@@ -1,0 +1,16 @@
+.container{
+  display: grid;
+
+  /* 
+  -> this function takes in parameters the times of repetition and the width of each one. 
+  
+  -> fr unit is fractional, it divides the current width into repeated identical fractions 
+  . for example: 4 columns in 1200px of width, each fraction 1fr has 300px (1200/4), but if one of them has 2 fractions, then it will take the 1200 as 5 columns instead and get 1200/5 = 240, getting 480px of width
+
+  -> repeat(number_of_repetitions, repeated_pattern)
+  */
+  grid-template-columns: repeat(3, 1fr) 2fr;
+  
+  /* this has same explanation as above, but height instead of width, rows instead of columns */
+  grid-template-rows: repeat(3, 1fr) 2fr;
+}
