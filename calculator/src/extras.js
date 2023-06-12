@@ -7,12 +7,11 @@ function appendCharacter(buttonId){
     button_ac();
   }else{
     if(input.val().length <= 200){
-      let convert = evalCharacter(buttonId);
-      
-      if( isValidOperation() ) input.val(input.val() + convert);
+      if( isValidOperation() ) input.val(input.val() + buttonId);
     }
   }
 }
+$('.calc__buttons button').on('click', (event) => appendCharacter(event.target.id));
 // $(document).on('keyup', (event) => console.log(event.key);
 
 
