@@ -14,22 +14,24 @@ $(".calc__buttons button").on("click", (event) =>
 
 function calculate() {
   let equation = $(".calc__input input").val();
-  let len = equation.length;
   let result, ops = evalEquation(equation);
 
   if (equation === "") 
     result = 0;
 
-  else if (ops.operands.length === 1) 
+  else if (ops.operands.length === 1 && !/[a-z]+/i.test(equation)) 
     result = equation;
   
-  else if(isOperator(equation[len - 1]) || isOperator(equation[0]))
+  else if(hasSyntaxError(equation))
     result = 'Syntax Error';
   
   else 
     result = calculatePrecedence(ops);
 
-  $(".calc__input h3").html(result);
+  if(!isNaN(result)) 
+    $(".calc__input h3").html(parseInt(result).toLocaleString("en-US") );
+  else
+    $(".calc__input h3").html(result);
 }
 
 function evalEquation(equation) {
@@ -142,8 +144,7 @@ function isValidCharacter(pressedButton) {
     case "ArrowDown":
     case "ArrowLeft":
     case "ArrowRight":
-    case "x":
-    case "X":
+    // case "x": case "X":
     case "*":
     case "/":
     case "+":
@@ -181,6 +182,40 @@ function isValidOperation(pressedButton) {
     return false;
 
   else return true;
+}
+
+function hasSyntaxError(equation){
+  /* 
+  should not have: 
+    -> other than operators and numbers,
+    -> 2 operators next to each other, 
+    -> leading or trailing operator 
+  */
+  // this checks for 2 operators in a row
+  let len = equation.length;
+  for(let i = 0; i < len - 1; i++)
+    if(isOperator(equation[i]) && isOperator(equation[i+1]))
+      return true;
+
+  // this checks: leading/trailing operators and for any letter
+  return isOperator(equation[len - 1]) 
+      || isOperator(equation[0]) 
+      || /[a-z]+/i.test(equation);
+}
+
+function copyResultToClipboard(){
+  let result = $('.calc__input h3').html();
+  if(result === '') result = 0;
+
+  // remove the commas made by toLocaleString()
+  if(isNaN(result)) result = result.split(',').join('');
+
+  // Copy the text into the clipboard
+  navigator.clipboard.writeText(result)
+    .then( () => {
+      $('.calc__copy-result').html('copied!');
+      setTimeout(() => $('.calc__copy-result').html('copy'), 3000);
+    });
 }
 
 // clear all button
